@@ -8,12 +8,37 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 10px;
   
 }
+select {
+    width: 180px;
+    background-color: #002a80;
+    border: 1px solid;
+    border-radius: 4px;
+}
+h1 {
+  word-spacing: 5px;
+  color: #000000;
+  font-weight: bold;
+  padding-top: 1px;
+  text-align: center;
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+}
+
 registrazione {
   padding-top: 40px;
   text-align: center;
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+}
+login {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 90px;
+  text-align: center;
+  line-height: 100%;
+  margin-bottom: 30px;
 }
 
 section {
