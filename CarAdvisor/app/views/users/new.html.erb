@@ -1,0 +1,41 @@
+<registrazione>
+<h1>New User</h1>
+
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="K3DPfkH7auq2ODaltzBitES2VOyMPDQnaF339M7dC7szIa3JY2WVFtD4YNfSH5DM5q+3/Dnd28dPmQ4xjiwPXA==" />
+
+  <div class="field">
+    <label for="user_nome">Nome</label>
+    <input type="text" name="user[nome]" id="user_nome" />
+  </div>
+
+  <div class="field">
+    <label for="user_cognome">Cognome</label>
+    <input type="text" name="user[cognome]" id="user_cognome" />
+  </div>
+
+  <div class="field">
+    <label for="user_email">Email</label>
+    <input type="text" name="user[email]" id="user_email" />
+  </div>
+
+  <div class="field">
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]" id="user_password" />
+  </div>
+
+  <div class="field">
+    <label for="user_tipo">Tipo</label>
+    <select name="user[tipo]" id="user_tipo">
+        <option value="0"> Utente</option>
+        <option value="1"> Meccanico</option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create User" data-disable-with="Create User" />
+  </div>
+</form>
+
+<a href="/users">Lista Utenti</a>
+
+</registrazione>
