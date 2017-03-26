@@ -9,7 +9,6 @@ html {
 
 select {
     width: 180px;
-    background-color: #ffffff;
     border: 1px solid;
     border-radius: 4px;
 }
@@ -29,6 +28,17 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
+.registrazione{
+  padding-top: 20px;
+  padding-bottom: 820px;
+  background-color: #FFF;
+  padding-top: 40px;
+  text-align: center;
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+} 
+
+
 #logo{
     color: #FFF;
     font-size: 30px;
@@ -42,12 +52,7 @@ a {
 }
 
 
-registrazione {
-  padding-top: 40px;
-  text-align: center;
-  line-height: 150%;
-  font-family: 'Raleway', sans-serif;
-}
+
 login {
   font-family: 'Raleway', sans-serif;
   padding-top: 90px;

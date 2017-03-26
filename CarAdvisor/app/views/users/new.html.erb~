@@ -1,7 +1,9 @@
-<registrazione>
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
+<body style="background-color:#1aa3ff" class="test">
+<registrazione>
+<div class="test">
 <h1>Sign up</h1>
 
 <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==" />
@@ -28,17 +30,18 @@
 
   <div class="field">
     <label for="user_tipo">Tipo</label>
-    <select name="user[tipo]" id="user_tipo" size=3>
+    <select name="user[tipo]" id="user_tipo">
         <option value="0"> Utente</option>
         <option value="1"> Meccanico</option>
     </select>
   </div>
 
   <div class="actions">
-    <input type="submit" name="commit" value="Create User" class="btn btn-primary btn-lg" data-disable-with="Create User" />
+  <input type="submit" name="commit" value="Create User" class="btn btn-primary btn-lg" data-disable-with="Create User" />
   </div>
 </form>
-
+</div>
 <a href="/users">Lista Utenti</a>
 
 </registrazione>
+</body>
