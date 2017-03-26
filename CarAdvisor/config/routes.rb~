@@ -1,7 +1,10 @@
 
  Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'pagina_statica/home'
 
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
   resources :users
-  root 'application#hello'
+  root                'pagina_statica#home'
 end

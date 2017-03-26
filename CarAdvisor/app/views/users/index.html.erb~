@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+
 <h1>Users</h1>
 
 <table>

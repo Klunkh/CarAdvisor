@@ -4,9 +4,8 @@ class ApplicationController < ActionController::Base
 def hello
     render html: "Proviamo a iniziare CarAdvisor"
   end
+
 include SessionsHelper
-def log_in(user)
-    session[:user_id] = user.id
-end
+
 
 end
