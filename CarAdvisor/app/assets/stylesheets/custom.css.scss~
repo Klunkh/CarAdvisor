@@ -57,7 +57,7 @@ a {
 }
 
 #logologin:hover{
-	color:4287CA;
+	color: #4287CA;
 }
 
 
@@ -86,3 +86,35 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+
+.datiPers{
+  padding-top: 20px;
+  padding-bottom: 820px;
+  background-color: #FFF;
+  padding-top: 40px;
+  text-align: left;
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+} 
+
+.pers {
+   font-size: 20px;
+   font-family: 'Raleway', sans-serif;
+}
+
+.modPers {
+   font-size: 20px;
+   font-family: 'Raleway', sans-serif;
+}
+.modPers:hover{
+   color:#4287CA;
+   background-color:#FFF;
+
+
+}
+.sfondo {  background-image: url('/assets/sfondocar.jpg'); 
+    background-size:    1500px 600px;  
+    background-repeat: no-repeat;
+    background-position: top;
+                           
+    }
