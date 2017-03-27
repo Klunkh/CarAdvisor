@@ -8,4 +8,14 @@ module SessionsHelper
 	def logged_in?
 		!current_user.nil?
 	end
+	def current_id
+		var=session[:user_id]
+	return var
+	end
+	
+	def log_out
+    		session.delete(:user_id)
+    		@current_user = nil
+  	end
+		
 end

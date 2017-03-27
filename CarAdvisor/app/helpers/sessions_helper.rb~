@@ -8,4 +8,9 @@ module SessionsHelper
 	def logged_in?
 		!current_user.nil?
 	end
+	def current_id
+		var=session[:user_id]
+	return var
+	end
+		
 end

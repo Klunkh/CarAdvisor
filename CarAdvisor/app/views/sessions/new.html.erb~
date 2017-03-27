@@ -3,7 +3,7 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
 <% provide(:title, "Log in") %>
-<h1>Login</h1>
+<h1>Log in</h1>
 <br/>
 <div class="row">
   <div class="col-md-2 col-md-offset-5">
