@@ -112,9 +112,10 @@ textarea {
 
 
 }
-.sfondo {  background-image: url('/assets/sfondocar.jpg'); 
-    background-size:    1500px 650px;  
-    background-repeat: no-repeat;
-    background-position: top;
+.sfondo {  background: url('/assets/sfondocar.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
                            
     }
