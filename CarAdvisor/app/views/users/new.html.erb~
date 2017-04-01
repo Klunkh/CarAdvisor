@@ -1,35 +1,35 @@
 <head>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
-<body>
+<body style="background-color: #1aa3ff" class="test">
 <div class="registrazione">
 <h1>Sign up</h1>
-
+<div class="col-md-4 col-md-offset-4">
 <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==" />
 
   <div class="field">
     <label for="user_nome">Nome</label>
-    <input type="text" name="user[nome]" id="user_nome" />
+    <input type="text" size= "30" class="form-control" name="user[nome]" id="user_nome" />
   </div>
 
   <div class="field">
     <label for="user_cognome">Cognome</label>
-    <input type="text" name="user[cognome]" id="user_cognome" />
+    <input type="text" name="user[cognome]" size= "30" class="form-control" id="user_cognome" />
   </div>
 
   <div class="field">
     <label for="user_email">Email</label>
-    <input type="text" name="user[email]" id="user_email" />
+    <input type="text" name="user[email]" size= "30" class="form-control"  id="user_email" />
   </div>
 
   <div class="field">
     <label for="user_password">Password</label>
-    <input type="password" name="user[password]" id="user_password" />
+    <input type="password" name="user[password]" size="30" class="form-control" id="user_password" />
   </div>
 
   <div class="field">
     <label for="user_tipo">Tipo</label>
-    <select name="user[tipo]" id="user_tipo">
+    <select name="user[tipo]" id="user_tipo" style="width: 250px">
         <option value="0"> Utente</option>
         <option value="1"> Meccanico</option>
     </select>
@@ -38,9 +38,12 @@
   <div class="actions">
   <input type="submit" name="commit" value="Crea Account" class="btn btn-primary btn-lg" data-disable-with="Create User" />
   </div>
+
 </form>
 </div>
-<a href="/users">Lista Utenti</a>
+
+</div>
+
 
 </registrazione>
 </body>
