@@ -74,7 +74,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "Utente cancellato correttamente."
     redirect_to users_url
 
     
