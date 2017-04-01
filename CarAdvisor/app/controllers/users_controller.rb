@@ -33,9 +33,10 @@ class UsersController < ApplicationController
 	log_in @user
 	flash[:success] = "Benvenuto in CarAdvisor"
         #redirect_to "http//localhost:3000/"
-        format.html { redirect_to @user, notice: 'Account creato correttamente.' }
+        format.html { redirect_to @user}
         format.json { render :show, status: :created, location: @user }
       else
+	flash[:danger]= "Errore creazione account"
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -50,9 +51,11 @@ class UsersController < ApplicationController
       
 	
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+	flash[:success] = "Dati aggiornati correttamente."
+        format.html { redirect_to @user}
         format.json { render :show, status: :ok, location: @user }
       else
+	flash[:danger] = "Errore nella modifica dei dati personali."
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       
@@ -65,8 +68,9 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    flash[:success]="Utente cancellato correttamente."
+    format.html { redirect_to users_url}
+    format.json { head :no_content }
     end
   end
 

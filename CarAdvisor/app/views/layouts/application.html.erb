@@ -26,7 +26,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"id="logologin"><span class="glyphicon glyphicon-cog"></span> Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
@@ -43,7 +43,9 @@
     </ul>
   </div>
 </nav>
+ <% flash.each do |message_type, message| %> <div class="container alert-<%= message_type %>"><br/><%= message %> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div> <% end %>
     <div class="container">
+
       <%= yield %>
     </div>
 

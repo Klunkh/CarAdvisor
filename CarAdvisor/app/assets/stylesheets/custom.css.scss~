@@ -107,6 +107,7 @@ textarea {
    font-family: 'Raleway', sans-serif;
 }
 .modPersXS:hover {
+   
    color:#4287CA;
    background-color:#FFF;
 }

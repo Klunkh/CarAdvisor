@@ -123,4 +123,22 @@ textarea {
   -o-background-size: cover;
   background-size: 100% 100%;
                            
-    }
+}
+.alert-success{ 
+padding-top: 20px; 
+padding-bottom: 40px; 
+vertical-align: center; 
+background-color: #80FF80; 
+font-family: 'Raleway', sans-serif; 
+text-align: center; 
+font-size: medium; 
+}
+alert-danger{ 
+padding-top: 20px; 
+padding-bottom: 40px; 
+vertical-align: center; 
+background-color: #FF9F9F;
+font-family: 'Raleway', sans-serif;
+text-align: center;
+font-size: medium;
+}
