@@ -2,6 +2,8 @@
 <head>
   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
+<body>
+<div class="registrazione">
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
 <br/>
@@ -17,10 +19,10 @@
       <br/>
       <input type="submit" name="commit" value="Log in" class="btn btn-primary btn-block" data-disable-with="Log in" />
 </form>
-    <p>Sei un nuovo utente? <a href="http://localhost:3000/users/new">Registrati Ora!</a></p>
+    <p class="modPersXS">Sei un nuovo utente? <a href="http://localhost:3000/users/new">Registrati Ora!</a></p>
   </div>
 </div>
-</login>
+</div>
 
 
   </body>

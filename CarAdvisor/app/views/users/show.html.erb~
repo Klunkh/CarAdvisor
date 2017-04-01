@@ -1,6 +1,7 @@
 <head>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
+<% if check_id %>
 <p id="notice"><%= notice %></p>
 <div class="datiPers">
 <h1>Dati Personali </h1>
@@ -28,4 +29,7 @@
    <a href="http://localhost:3000/users/<%= current_id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
 </p>
 </div>
+<% else %>
+<h1> DIOCANEEEE </h1>
+<% end %>
 

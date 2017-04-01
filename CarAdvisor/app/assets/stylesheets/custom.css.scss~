@@ -29,7 +29,7 @@ a {
 
 .registrazione{
   padding-top: 20px;
-  padding-bottom: 820px;
+  padding-bottom: 450px;
   background-color: #FFF;
   padding-top: 40px;
   text-align: center;
@@ -89,7 +89,7 @@ textarea {
 
 .datiPers{
   padding-top: 20px;
-  padding-bottom: 820px;
+  padding-bottom: 450px;
   background-color: #FFF;
   padding-top: 40px;
   text-align: left;
@@ -106,6 +106,10 @@ textarea {
    font-size: 20px;
    font-family: 'Raleway', sans-serif;
 }
+.modPersXS:hover {
+   color:#4287CA;
+   background-color:#FFF;
+}
 .modPers:hover{
    color:#4287CA;
    background-color:#FFF;
@@ -116,6 +120,6 @@ textarea {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover 1px;
+  background-size: 100% 100%;
                            
     }

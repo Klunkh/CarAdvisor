@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="sfondo">
   <head>
     <title>CarAdvisor</title>
     <%= stylesheet_link_tag 'application', media: 'all',
@@ -13,14 +13,14 @@
   </head>
   <body style="background-color:#4287CA">
     <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+      <div class="container-fluid">
       <div class="navbar-header">
       <a class="navbar-brand" href="http://localhost:3000" id="logo"><span class="glyphicon glyphicon-home"></span> CarAdvisor</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-    <% if logged_in? %>
-    <li>
-		<a href="http://localhost:3000/users/<%= current_id %>" id="logologin"><span class="glyphicon glyphicon-user"></span> Utente</a>
+     </div>
+     <ul class="nav navbar-nav navbar-right">
+     <% if logged_in? %>
+     <li>
+	<a href="http://localhost:3000/users/<%= current_id %>" id="logologin"><span class="glyphicon glyphicon-user"></span> Utente</a>
 	</li>
     <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"id="logologin"><span class="glyphicon glyphicon-cog"></span> Account <b class="caret"></b></a>
