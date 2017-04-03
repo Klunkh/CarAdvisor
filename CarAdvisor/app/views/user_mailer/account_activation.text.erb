@@ -1,0 +1,5 @@
+Ciao <%= @user.nome %>,
+
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

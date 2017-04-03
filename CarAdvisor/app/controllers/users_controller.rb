@@ -37,10 +37,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       
       if @user.save
-	log_in @user
-	flash[:success] = "Benvenuto in CarAdvisor"
-        #redirect_to "http//localhost:3000/"
-        format.html { redirect_to @user}
+	@user.send_activation_email
+        flash[:info] = "Controlla la tua email per attivare l'account."
+        #redirect_to root_url
+        format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @user }
       else
 	flash[:danger]= "Errore creazione account"

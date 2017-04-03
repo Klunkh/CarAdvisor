@@ -1,0 +1,11 @@
+<h1>Sample App</h1>
+
+<p>Ciao <%= @user.nome %>,</p>
+
+<p>
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+

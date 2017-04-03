@@ -37,10 +37,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       
       if @user.save
-	log_in @user
-	flash[:success] = "Benvenuto in CarAdvisor"
-        #redirect_to "http//localhost:3000/"
-        format.html { redirect_to @user}
+	@user.send_activation_email
+        flash[:info] = "Please check your email to activate your account."
+        #redirect_to root_url
+        format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @user }
       else
 	flash[:danger]= "Errore creazione account"
@@ -91,10 +91,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:nome, :cognome, :email, :password, :tipo)
     end
     
-    def url_dinamico 
-	@user=User.id
-    end
-    
+      
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in."
