@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
 
@@ -21,18 +21,32 @@ class User < ApplicationRecord
   def User.new_token
     SecureRandom.urlsafe_base64
   end
-
+  
+  #token ricordami
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
-
+  
+  #crea token per reset password
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+ 
+  #manda email per reset password
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+  
+  #attiva account + data
   def activate
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
   end
 
-
+  #manda email per attivazione
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end

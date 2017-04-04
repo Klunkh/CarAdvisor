@@ -24,6 +24,7 @@
 
   <div class="field">
     <label for="user_password">Password</label>
+    <%= link_to "(Password Dimenticata?)", new_password_reset_path %>
     <input type="password" name="user[password]" size="30" class="form-control" id="user_password" />
   </div>
 

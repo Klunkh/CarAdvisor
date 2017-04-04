@@ -1,0 +1,21 @@
+
+      <html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body>
+<div class="registrazione">
+<h1>Recupera Password</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form action="/password_resets" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="q4CymNk/cItapSYjl6Bzm7HCh7gimTbhB8wMtmWpoyZHDI4KJ0sRsTIa/W9RZ30DagO+YFB0DB31Qqqr8ve9cw==" />
+      <label for="password_reset_email">Email</label>
+      <input class="form-control" type="email" name="password_reset[email]" id="password_reset_email" />
+      <br/>
+      <input type="submit" name="commit" value="Invia" class="btn btn-primary" data-disable-with="Submit" />
+</form>  </div>
+</div>
+</div>
+</body>
+</html>
