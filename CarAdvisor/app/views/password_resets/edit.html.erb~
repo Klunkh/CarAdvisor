@@ -16,7 +16,7 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
       <br/>
-      <%= f.submit "Aggiorna Password", class: "btn btn-primary" %>
+      <%= f.submit "Aggiorna Password", class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
 </div>

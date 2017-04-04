@@ -19322,3 +19322,1250 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-04 02:17:23 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:01:49 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (1.8ms)
+Started GET "/users/16" for 127.0.0.1 at 2017-04-04 17:01:51 +0200
+Completed 200 OK in 1441ms (Views: 1433.2ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:01:51 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:01:54 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:14:53 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:15:38 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-04 17:15:41 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rm8tDVJq1EXNr7816d2R/9U+O/gWkC+oi7S3My+lsde3HuSsLXM6HW+VvYZnabiWl8qy2fH81SI28QAYIov7qA==", "session"=>{"email"=>"asdasd@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asdasd@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:15:41 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:15:46 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-04 17:16:34 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rm8tDVJq1EXNr7816d2R/9U+O/gWkC+oi7S3My+lsde3HuSsLXM6HW+VvYZnabiWl8qy2fH81SI28QAYIov7qA==", "session"=>{"email"=>"baubauwow@gmail.com", "password"=>"[FILTERED]"}, "rememberme"=>"remember", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:16:34 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2017-04-04 17:16:41 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 63ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:17:54 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:17:57 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:18:53 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:21:50 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 1198ms (Views: 1196.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2017-04-04 17:21:54 +0200
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2017-04-04 17:22:04 +0200
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q4CymNk/cItapSYjl6Bzm7HCh7gimTbhB8wMtmWpoyZHDI4KJ0sRsTIa/W9RZ30DagO+YFB0DB31Qqqr8ve9cw==", "password_reset"=>"[FILTERED]", "commit"=>"Invia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$gz3XSMLse9Hl7LbjK4HS8ObSgiip.lBiFdTWR3FzP4/Z9.QE5a8qK"], ["updated_at", 2017-04-04 15:22:04 UTC], ["id", 16]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2017-04-04 15:22:04 UTC], ["reset_sent_at", 2017-04-04 15:22:04 UTC], ["id", 16]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.6ms)
+UserMailer#password_reset: processed outbound mail in 227.8ms
+Sent mail to baubauwow@gmail.com (1897.9ms)
+Date: Tue, 04 Apr 2017 17:22:04 +0200
+From: caradvisorz@gmail.com
+To: baubauwow@gmail.com
+Message-ID: <58e3ba1cdad37_c942b7e63c811f7@pfp-VirtualBox.mail>
+Subject: Reimpostazione Password CarAdvisor
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e3ba1cd96a1_c942b7e63c8101f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e3ba1cd96a1_c942b7e63c8101f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Per resettare la password clicca sul link sottostante:
+
+http://localhost:3000/password_resets/3aCCUwe8FegPilUCYhGh8g/edit?email=baubauwow%40gmail.com
+
+Se non hai richiesto il recupero della password, per favore ignora questa e-mail.
+
+
+----==_mimepart_58e3ba1cd96a1_c942b7e63c8101f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Password reset</h1>
+
+<p>Per resettare la password clicca sul link sottostante:</p>
+
+<a href=3D"http://localhost:3000/password_resets/3aCCUwe8FegPilUCYhGh8g/e=
+dit?email=3Dbaubauwow%40gmail.com">Reset password</a>
+
+<p>Il link non sar=C3=A0 pi=C3=B9 utilizzabile tra due ore</p>
+
+<p>
+Se non hai richiesto il recupero della password, per favore ignora questa=
+ e-mail.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_58e3ba1cd96a1_c942b7e63c8101f--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2282ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:22:06 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2017-04-04 17:23:23 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 43.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/16/edit" for 127.0.0.1 at 2017-04-04 17:23:26 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-04-04 17:30:37 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LbOINh7WcQ1fMki06n69EPrmm2Srphpz9IeFNN9eqani7DYGq2dU9CHIwB9KcKCRyrC9A25+daumth/VFqWE+Q=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:30:37 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1172ms (Views: 1171.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 17:30:41 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:31:07 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-04 17:31:34 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rm8tDVJq1EXNr7816d2R/9U+O/gWkC+oi7S3My+lsde3HuSsLXM6HW+VvYZnabiWl8qy2fH81SI28QAYIov7qA==", "session"=>{"email"=>"baubauwow@gmail.com", "password"=>"[FILTERED]"}, "rememberme"=>"remember", "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:31:34 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2017-04-04 17:31:50 +0200
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/password_resets/3aCCUwe8FegPilUCYhGh8g/edit?email=baubauwow%40gmail.com" for 127.0.0.1 at 2017-04-04 17:32:21 +0200
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"baubauwow@gmail.com", "id"=>"3aCCUwe8FegPilUCYhGh8g"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (79.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 207ms (Views: 135.9ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/password_resets/3aCCUwe8FegPilUCYhGh8g" for 127.0.0.1 at 2017-04-04 17:32:35 +0200
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OAAgTzectOAtwEnc2OJWrdW0M5mQwKzuJgmHul8njtD3X55/gi2RGVM6wXd47Ess5eIV/lUYwzZ0OB1bltyjgA==", "email"=>"baubauwow@gmail.com", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Aggiorna Password", "id"=>"3aCCUwe8FegPilUCYhGh8g"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 223ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/password_resets/3aCCUwe8FegPilUCYhGh8g" for 127.0.0.1 at 2017-04-04 17:32:50 +0200
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKHGg0JWwT5zA8kzoWIcrOSMZ8RAdrOvf6Xs8YSMBmOP/niz9+fkxw35QZgBbAEt1NpBo4Wu3HctlHYQTXcrMw==", "email"=>"baubauwow@gmail.com", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Aggiorna Password", "id"=>"3aCCUwe8FegPilUCYhGh8g"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 34.5ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/password_resets/3aCCUwe8FegPilUCYhGh8g" for 127.0.0.1 at 2017-04-04 17:33:06 +0200
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ixjgZCbaFTbNOGutQjdZepAEWRgLqBr5YnPkJ0R6OaxER15Uk2swz7PC4wbiOUT7oFJ/f85wdSEwQn7GjYEU/A==", "email"=>"baubauwow@gmail.com", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Aggiorna Password", "id"=>"3aCCUwe8FegPilUCYhGh8g"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$1abqNU8x78dGq3/mYHLgauTL9eIrQf8SASLHreJciegx2lACyvIi2"], ["updated_at", 2017-04-04 15:33:06 UTC], ["id", 16]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/16
+Completed 302 Found in 138ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2017-04-04 17:33:06 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-04-04 17:34:08 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8XKdVQeMzOtmaRn82O2S2ieUWrzuRRdBuDftL8OnTt4+LSNlsj3pEhiTkVd4449bF8J82yudeJnqBnfOClxjjg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:34:08 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 17:34:10 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 17:34:15 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==", "user"=>{"nome"=>"", "cognome"=>"", "email"=>"asdasd@gmail.com", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdasd@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 98ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 17:34:37 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zW/yRqjoFnlA5SIdLoITdWntjhcj+gZz0tBGwtCK1IACMEx2HVkzgD4fqraOjA70WbuocOYiaauA4dwjGXH50A==", "user"=>{"nome"=>"", "cognome"=>"", "email"=>"prova@hfdhfhfhfhffhfh.it", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "prova@hfdhfhfhfhffhfh.it"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 103ms (Views: 35.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 17:35:11 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7x/InzOVpPXw8btwo8ujEUQeFMvKKW7hGJsQ/w2C644gQHavhiSBDI4LM9sDxb6QdEgyrA/xATlKqooexHnG3g==", "user"=>{"nome"=>"fiuwgbfciuvbc", "cognome"=>"", "email"=>"vowhvbcòo@rfuvgruweigv.iie", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "vowhvbcòo@rfuvgruweigv.iie"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 100ms (Views: 33.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/16/edit" for 127.0.0.1 at 2017-04-04 17:35:39 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"16"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 17:35:39 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-04 17:36:02 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rm8tDVJq1EXNr7816d2R/9U+O/gWkC+oi7S3My+lsde3HuSsLXM6HW+VvYZnabiWl8qy2fH81SI28QAYIov7qA==", "session"=>{"email"=>"baubau@gmail.com", "password"=>"[FILTERED]"}, "rememberme"=>"remember", "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubau@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-04 17:36:34 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2PxlY1rcyfaqSK11tP9fXeZwEdwQPN1XeQ1v/Cd0P/IXo9tT723sD9SyJd4U8ULc1iY3u9Xkso8rPPUd7o8Sog==", "session"=>{"email"=>"baubauwow@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baubauwow@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:36:34 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2017-04-04 17:36:43 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/16/edit" for 127.0.0.1 at 2017-04-04 17:36:45 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 49ms (Views: 44.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/16" for 127.0.0.1 at 2017-04-04 17:37:04 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LU8alkMCfZjpiX2zaZ3LpjAdvbkE2Ltwdy8O25gdDP73BlQezn/R/4C1ERZPyCG8Gv2GovOxY2WdRX6Z6FY9EA==", "user"=>{"nome"=>"test", "email"=>"test@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Salva", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "test@email.com"], ["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 96ms (Views: 23.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 17:59:53 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:8: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :nome, presence: true, length:...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:8: Can't assign to true
+...alidates :nome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:8: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:8: syntax error, unexpected ',', expecting keyword_end
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:10: syntax error, unexpected '\n', expecting =>):
+  
+app/models/user.rb:8: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:8: Can't assign to true
+app/models/user.rb:8: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:8: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:10: syntax error, unexpected '\n', expecting =>
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129454100640'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:02:34 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:7: syntax error, unexpected $undefined, expecting ']'
+  VALID_NOME_REGEX=[\w]+
+                     ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:7: syntax error, unexpected $undefined, expecting ']'
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129461352580'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.7ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:15 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129456848280'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.8ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:48 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_29561220'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:49 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129457581580'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:50 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129461751920'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.0ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:50 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129454948100'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.0ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:50 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129458549760'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.4ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:03:51 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :cognome, presence: true, leng...
+             ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: Can't assign to true
+...dates :cognome, presence: true, length: { maximum: 50 }, for...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+... true, length: { maximum: 50 }, format: { with: VALID_NOME_R...
+...                               ^
+/home/biar/Desktop/CarAdvisor/CarAdvisor/app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end):
+  
+app/models/user.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/user.rb:9: Can't assign to true
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ',', expecting keyword_end
+app/helpers/sessions_helper.rb:7:in `current_user'
+app/helpers/sessions_helper.rb:25:in `logged_in?'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___1021638945072636835_70129459210060'
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered /home/biar/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.2ms)
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:05:04 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-04-04 18:05:11 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Azm+HNpu9bZEk5qP9fALyFDySnzTfXFjoBBExxY0KTnMZgAsb9/QTzppEiRV/hZJYKRsGxalHrvyId4m388EaQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:05:11 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 18:05:13 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:05:24 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==", "user"=>{"nome"=>"sdjahbjhasg7623q76t2ùààò-ù-ù-", "cognome"=>"oiajsfiojhasbrdoha8762874178243ùààò@[#è]è]@", "email"=>"", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:05:51 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JuV6Q31JBHLEJ1gmz8XKKm1qS57SPdIV65OcM1v/8DnpusRzyPghi7rd0I1vy9erXTxt+Rflvc25ogbSkgTdaQ==", "user"=>{"nome"=>"erwq4124312532@·\#@·#]@··", "cognome"=>"sfwetwfsdgfsw][@#][@[]@]@", "email"=>"asuiyguyasgd@gmsail.com", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asuiyguyasgd@gmsail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users" ("nome", "cognome", "email", "tipo", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "erwq4124312532@·\#@·#]@··"], ["cognome", "sfwetwfsdgfsw][@#][@[]@]@"], ["email", "asuiyguyasgd@gmsail.com"], ["tipo", false], ["created_at", 2017-04-04 16:05:52 UTC], ["updated_at", 2017-04-04 16:05:52 UTC], ["password_digest", "$2a$10$EyOSltH0q.yIp0lNqryome0LiZ.rDuoQEZdf1Z2OOXOxt.f8.wxgm"], ["activation_digest", "$2a$10$RBMfRBmerekBRjYvcLkZLuetfZznQCB1NYclEC3HxQAqet5Drdg.6"]]
+  [1m[35m (29.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (6.2ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.0ms)
+UserMailer#account_activation: processed outbound mail in 16.2ms
+Sent mail to asuiyguyasgd@gmsail.com (1764.3ms)
+Date: Tue, 04 Apr 2017 18:05:52 +0200
+From: caradvisorz@gmail.com
+To: asuiyguyasgd@gmsail.com
+Message-ID: <58e3c4601e346_c942b7dfd48135c@pfp-VirtualBox.mail>
+Subject: Attivazione Account CarAdvisor
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e3c4601cde8_c942b7dfd481265";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e3c4601cde8_c942b7dfd481265
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ciao erwq4124312532@=C2=B7#@=C2=B7#]@=C2=B7=C2=B7,
+
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo =
+account! =
+
+
+http://localhost:3000/account_activations/FF4SweaHvRtoCoOOLMT6sQ/edit?ema=
+il=3Dasuiyguyasgd%40gmsail.com
+
+
+----==_mimepart_58e3c4601cde8_c942b7dfd481265
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Ciao erwq4124312532@=C2=B7#@=C2=B7#]@=C2=B7=C2=B7,</p>
+
+<p>
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo =
+account! =
+
+</p>
+
+<a href=3D"http://localhost:3000/account_activations/FF4SweaHvRtoCoOOLMT6=
+sQ/edit?email=3Dasuiyguyasgd%40gmsail.com">Activate</a>
+
+
+  </body>
+</html>
+
+----==_mimepart_58e3c4601cde8_c942b7dfd481265--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1948ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:05:53 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:06:38 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 18:06:39 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:06:47 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==", "user"=>{"nome"=>"asdjhbuy2348721374\#@[]@", "cognome"=>"sdkjnhsjhfdh2345234", "email"=>"", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:07:02 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATHfUsY2v5vM8W+DhZbELmHba7IeM5s159LydH2xspzObmFic4eaYrIL5yglmNmvUY1N1dvr9O2142iVtEqfzA==", "user"=>{"nome"=>"sdwar234@@][21", "cognome"=>"weruijaui2@##", "email"=>"kasdfjhahjk@mail.com", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "kasdfjhahjk@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users" ("nome", "cognome", "email", "tipo", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "sdwar234@@][21"], ["cognome", "weruijaui2@##"], ["email", "kasdfjhahjk@mail.com"], ["tipo", false], ["created_at", 2017-04-04 16:07:02 UTC], ["updated_at", 2017-04-04 16:07:02 UTC], ["password_digest", "$2a$10$7LNH9WG7qqdxadz5ZQgJWO/Jq28K9AOpZalHQyp2Kq60kfE0brakC"], ["activation_digest", "$2a$10$4H.Y6oPC.6dPD5eLRP50ZujIzBKKeCRJeJ1IwlXX7TiyLxqYB0Y0C"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.0ms)
+UserMailer#account_activation: processed outbound mail in 6.2ms
+Sent mail to kasdfjhahjk@mail.com (1454.8ms)
+Date: Tue, 04 Apr 2017 18:07:02 +0200
+From: caradvisorz@gmail.com
+To: kasdfjhahjk@mail.com
+Message-ID: <58e3c4a638670_c942b7dfd481525@pfp-VirtualBox.mail>
+Subject: Attivazione Account CarAdvisor
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e3c4a6371e6_c942b7dfd4814c8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e3c4a6371e6_c942b7dfd4814c8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Ciao sdwar234@@][21,
+
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+
+http://localhost:3000/account_activations/8Ge6p6K07O8KgGSCXFWETw/edit?email=kasdfjhahjk%40mail.com
+
+
+----==_mimepart_58e3c4a6371e6_c942b7dfd4814c8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Ciao sdwar234@@][21,</p>
+
+<p>
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+</p>
+
+<a href="http://localhost:3000/account_activations/8Ge6p6K07O8KgGSCXFWETw/edit?email=kasdfjhahjk%40mail.com">Activate</a>
+
+
+  </body>
+</html>
+
+----==_mimepart_58e3c4a6371e6_c942b7dfd4814c8--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1601ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:07:03 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 18:07:09 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:07:25 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==", "user"=>{"nome"=>"asrqwerq", "cognome"=>"", "email"=>"adrgerd@gmail.com", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "adrgerd@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 91ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:08:28 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PLfE3xfVtL+aDPyZgAUvVr+goHA931PVjf36NnvBwN3z6HrvomSRRuT2dDIgCzLXj/aGF/gHPA3fzGDXsjrtjQ==", "user"=>{"nome"=>"fasdf.`][]", "cognome"=>"", "email"=>"", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 41ms (Views: 22.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:08:49 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-04 18:08:51 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 48ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-04 18:09:05 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==", "user"=>{"nome"=>"fsdfsdfsdf@\#@\#@#", "cognome"=>"gstre2332@\#@\#@", "email"=>"baubau@gmail.com", "password"=>"[FILTERED]", "tipo"=>"0"}, "commit"=>"Crea Account"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "baubau@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("nome", "cognome", "email", "tipo", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "fsdfsdfsdf@\#@\#@#"], ["cognome", "gstre2332@\#@\#@"], ["email", "baubau@gmail.com"], ["tipo", false], ["created_at", 2017-04-04 16:09:05 UTC], ["updated_at", 2017-04-04 16:09:05 UTC], ["password_digest", "$2a$10$N4XIqmxhMHs/dljhGlhaA.39CitWnHw2yrESBJRJ32s0jLHQ/arZu"], ["activation_digest", "$2a$10$okPmge6BYcs6HKzNFutvEOSOOrFE5Cczo6CHue6XDvIzsu..CVBhm"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.2ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.4ms)
+UserMailer#account_activation: processed outbound mail in 8.1ms
+Sent mail to baubau@gmail.com (1865.0ms)
+Date: Tue, 04 Apr 2017 18:09:05 +0200
+From: caradvisorz@gmail.com
+To: baubau@gmail.com
+Message-ID: <58e3c52131cd6_c942b7e08881718@pfp-VirtualBox.mail>
+Subject: Attivazione Account CarAdvisor
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e3c52131974_c942b7e088816fc";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e3c52131974_c942b7e088816fc
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Ciao fsdfsdfsdf@#@#@#,
+
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+
+http://localhost:3000/account_activations/6h0shZldKMIUNvpRHKTx8w/edit?email=baubau%40gmail.com
+
+
+----==_mimepart_58e3c52131974_c942b7e088816fc
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Ciao fsdfsdfsdf@#@#@#,</p>
+
+<p>
+Benvenuto in CarAdvisor! Clicca nel link sottostante per attivare il tuo account! 
+</p>
+
+<a href="http://localhost:3000/account_activations/6h0shZldKMIUNvpRHKTx8w/edit?email=baubau%40gmail.com">Activate</a>
+
+
+  </body>
+</html>
+
+----==_mimepart_58e3c52131974_c942b7e088816fc--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2006ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:09:07 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:15 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:36 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:37 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 36ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:38 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:38 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 31ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:38 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:10:39 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:12:51 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-04 18:12:52 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 52ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2017-04-04 18:12:53 +0200
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2017-04-04 18:13:03 +0200
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q4CymNk/cItapSYjl6Bzm7HCh7gimTbhB8wMtmWpoyZHDI4KJ0sRsTIa/W9RZ30DagO+YFB0DB31Qqqr8ve9cw==", "password_reset"=>"[FILTERED]", "commit"=>"Invia"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seffseaeasfrt@jkhbafsjhbasjhbas.com"], ["LIMIT", 1]]
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:14:33 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-04 18:15:29 +0200
+Processing by PaginaStaticaController#home as HTML
+  Rendering pagina_statica/home.html.erb within layouts/application
+  Rendered pagina_statica/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+

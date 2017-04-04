@@ -148,10 +148,18 @@ font-family: 'Raleway', sans-serif;
 text-align: center;
 font-size: medium;
 }
-
+.alert-info{ 
+padding-top: 20px; 
+padding-bottom: 40px; 
+vertical-align: center; 
+background-color: #FFFF80;
+font-family: 'Raleway', sans-serif;
+text-align: center;
+font-size: medium;
+}
 .closebtn{
  margin-left: 15px;
- color: white;
+ color: #000000;
  font-weight: bold;
  #float: right;
  font-size: 22px;
