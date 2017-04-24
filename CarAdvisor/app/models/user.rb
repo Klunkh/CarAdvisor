@@ -1,19 +1,39 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
+  has_many :autoveicolos, dependent: :destroy
+  has_many :officinas, dependent: :destroy
   before_save   :downcase_email
   before_create :create_activation_digest
-
   before_save { self.email = email.downcase }
   
-  validates :nome, presence: true, length: { maximum: 50 } 
-  validates :cognome, presence: true, length: { maximum: 50 } 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
-  has_secure_password
-  validates :password, length: { minimum: 6 }, allow_blank: true
+  VALID_NOME_REGEX = /\A([A-Z][a-z]+)(\s?[A-Z][a-z]*'?[a-z]+)*\z/i
+  VALID_COGNOME_REGEX =/\A([A-Z][a-z]*'?[a-z]+)+\z/i
+  
+  
+  validates :nome, presence: { :message => ": inserire un nome" }, length: { maximum: 50 } ,
+  format: { with: VALID_NOME_REGEX , :message => ":formato non supportato"}, on: :create
+ 
 
+  validates :cognome, presence: { :message => ": inserire un cognome"  }, length: { maximum: 50 } ,
+  format: { with: VALID_COGNOME_REGEX , :message => ":formato non supportato"}, on: :create
+  
+  validates :email, presence: { :message => ": inserire un'email"  }, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX , :message => ":formato non supportato"},
+                    uniqueness: { case_sensitive: false } 
+  
+  
+ 
+  has_secure_password
+  
+  validates :password, presence: { :message => ": inserire una password"  }, length: { minimum: 6 }, allow_blank: true ,on: :create
+  validates :password, :presence => TRUE, :on => :update
+
+  def get_meccanico
+        "#{nome} #{cognome}"
+  end     
+		
+  
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

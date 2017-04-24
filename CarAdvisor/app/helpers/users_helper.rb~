@@ -5,7 +5,7 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.nome, class: "gravatar")
   end
  def prova(user)
-        var cane=""
+        cane=""
 	user = User.find_by(id: user)
 	if(user.tipo=="f") 
 		cane="Meccanico";

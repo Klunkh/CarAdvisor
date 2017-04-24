@@ -38,12 +38,12 @@ class UsersController < ApplicationController
       
       if @user.save
 	@user.send_activation_email
-        flash[:info] = "Controlla la tua email per attivare l'account."
+        flash.now[:info] = "Controlla la tua email per attivare l'account."
         #redirect_to root_url
         format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @user }
       else
-	flash[:danger]= "Errore creazione account"
+	flash.now[:danger]= "Errore creazione account"
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -58,11 +58,11 @@ class UsersController < ApplicationController
       
 	
       if @user.update(user_params)
-	flash[:success] = "Dati aggiornati correttamente."
+	flash.now[:success] = "Dati aggiornati correttamente."
         format.html { redirect_to @user}
         format.json { render :show, status: :ok, location: @user }
       else
-	flash[:danger] = "Errore nella modifica dei dati personali."
+	flash.now[:danger] = "Errore nella modifica dei dati personali."
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "Utente cancellato correttamente."
-    redirect_to users_url
+    redirect_to root_url
 
     
   end

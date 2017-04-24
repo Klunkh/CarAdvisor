@@ -22,10 +22,13 @@
       
 
       <label for="user_name">Nome</label>
-      <input class="form-control" type="text" value="test" name="user[nome]" id="user_nome" />
-
+	  <input class="form-control" type="text" name="user[nome]"  id="user_nome"  value = "<%= @user.nome %>" />
+		
+      <label for="user_cognome">Cognome</label>
+      <input type="text" name="user[cognome]" size= "30" class="form-control" id="user_cognome" value = "<%= @user.cognome %>" />
+  
       <label for="user_email">Email</label>
-      <input class="form-control" type="email" value="test@email.com" name="user[email]" id="user_email" />
+      <input class="form-control" type="email" name="user[email]" id="user_email" value = "<%= @user.email %>"  />
 
       <label for="user_password">Password</label>
       <input class="form-control" type="password" name="user[password]" id="user_password" />
@@ -33,7 +36,7 @@
       <label for="user_password_confirmation">Conferma Password</label>
       <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
  <br/>
-<input type="submit" name="commit" value="Salva" class="btn btn-primary" data-disable-with="Save changes" />
+<input type="submit" name="commit" value="Salva" class="btn btn-primary" data-disable-with="Salvataggio.." />
 </form><br/>
 </div>
    

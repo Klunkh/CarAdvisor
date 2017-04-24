@@ -1,0 +1,41 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body style="background-color: #1aa3ff" class="test">
+<div class="registrazione">
+<h1>Officina</h1>
+<div class="col-md-4 col-md-offset-4">
+
+<form class="new_user" id="new_user" action="/officinas" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+ <div class="field">
+    <input type="hidden" name="officinas[user_id]" size= "30" class="form-control"  id="officinas_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+    <label for="officinas_indirizzo">Indirizzo</label>
+    <input type="text" size= "30" class="form-control" name="officinas[indirizzo]" id="officinas_indirizzo" />
+  </div>
+
+  <div class="field">
+    <label for="officinas_contatto">Contatto</label>
+    <input type="text" name="officinas[contatto]" size= "30" class="form-control" id="officinas_contatto" />
+  </div>
+
+  <div class="field">
+    <label for="officinas_numero_telefono">Numero di telefono</label>
+    <input type="text" name="officinas[numero_telefono]" size= "30" class="form-control"  id="officinas_numero_telefono" />
+  </div>
+
+
+  
+
+  <div class="actions">
+  <input type="submit" name="commit" value="Crea Officina" class="btn btn-primary btn-lg" data-disable-with="Creazione officina" />
+  </div>
+
+</form>
+<% end %>
+</div>
+
+</div>
+
+</body>

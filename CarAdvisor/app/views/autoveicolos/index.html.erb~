@@ -1,0 +1,39 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class= "tabella">
+<h1>indice veicoli</h1>
+<br/>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th class=pers>Targa</th>
+      <th class=pers>Modello</th>
+      <th class=pers>Carburante</th>
+      <th class=pers>Kilometri</th>
+      <th class=pers>Opzioni</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<% if current_user.admin?  %>
+<% @autoveicolo.each do |autoveicolo| %>
+<tr>
+	<td> <%= autoveicolo.targa %></td>
+        <td> <%= autoveicolo.modello %></td>
+        <td> <%= autoveicolo.carburante %></td>
+	<td> <%= autoveicolo.kilometri%></td>
+	<td> <a href="http://localhost:3000/autoveicolos/<%= autoveicolo.id ">Mostra</a></td>
+<% end %>
+<% else %>
+
+<% @autoveicolo.where(user_id: current_id).find_each do |autoveicolo| %>
+<tr>
+	<td> <%= autoveicolo.targa %></td>
+        <td> <%= autoveicolo.modello %></td>
+        <td> <%= autoveicolo.carburante %></td>
+	<td> <%= autoveicolo.kilometri%></td>
+	<td> <a href="http://localhost:3000/users/<%= current_id %>">Mostra</a></td>
+<% end %>
+<% end %>
+</tr>
+</div>

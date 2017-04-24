@@ -1,0 +1,56 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class= "tabella">
+<h1>Indice officine</h1>
+<br/>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th class=pers>Indirizzo</th>
+      <th class=pers>Contatto</th>
+      <th class=pers>Numero di telefono</th>
+      <th class=pers>Opzioni</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<% if current_user.admin?  %>
+<% @officina.each do |officina| %>
+<tr>
+	<td> <%= officina.indirizzo %></td>
+        <td> <%= officina.contatto %></td>
+        <td> <%= officina.numero_telefono %></td>
+	<td> <a class = "modPers" href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra </a> &emsp;
+	<a class = "modPers" data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow" data-method="delete" href="/officinas/<%= officina.id %>"> Elimina</a> </td>
+</tr>
+	<% end %>
+<% elsif current_user.tipo? %>
+
+<% @officina.where(user_id: current_id).find_each do |officina| %>
+<tr>
+	<td> <%= officina.indirizzo %></td>
+        <td> <%= officina.contatto %></td>
+        <td> <%= officina.numero_telefono %></td>
+	<td> <a class = "modPers"  href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra &emsp; </a>
+	<a  class = "modPers" data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow"  data-method="delete" href="/officinas/<%= officina.id %>">  Elimina</a> </td>
+	</tr>
+	<% end %>
+<% else %>
+<% @officina.each do |officina| %>
+<tr>
+	<td> <%= officina.indirizzo %></td>
+        <td> <%= officina.contatto %></td>
+        <td> <%= officina.numero_telefono %></td>
+		<td> <a class = "modPers"   "> Officina personale? &emsp; </a>
+		</tr>
+<% end %>
+<% end %>
+
+</table>
+<% if current_user.tipo? || current_user.admin?%>
+<p>
+<a href="http://localhost:3000/officinas/new" class="modPers"><span class="glyphicon glyphicon-plus"></span> Aggiungi officina</a>
+</p>
+<% end %>
+</div>
+

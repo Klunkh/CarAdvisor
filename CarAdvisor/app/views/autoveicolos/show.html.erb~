@@ -1,0 +1,36 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<% utente_autoveicolo %>
+<p id="notice"><%= notice %></p>
+<div class="datiPers">
+<h1>Dati del Veicolo </h1>
+
+<p class=pers> 
+  <strong>Modello:</strong>
+  <%= @autoveicolo.modello %>
+</p>
+
+<p class=pers>
+  <strong>Targa:</strong>
+  <%= @autoveicolo.targa %>
+</p>
+
+<p class=pers>
+  <strong>Carburante:</strong>
+  <%= @autoveicolo.carburante %>
+</p>
+
+<p class=pers>
+  <strong>Km:</strong>
+  <%= @autoveicolo.kilometri %>
+</p>
+
+<p>
+   <a href="http://localhost:3000/autoveicolos/<%= @autoveicolo.id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
+</p>
+<br/>
+<p>
+<a data-confirm="Sicuro di voler eliminare questo veicolo?" rel="nofollow" class="modPers" data-method="delete" href="/autoveicolos/<%= @autoveicolo.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Veicolo</a></p>
+</div>
+

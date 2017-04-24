@@ -1,0 +1,52 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body style="background-color: #1aa3ff" class="test">
+<div class="registrazione">
+<h1>Nuovo Autoveicolo</h1>
+<div class="col-md-4 col-md-offset-4">
+<form class="new_autoveicolo" id="new_autoveicolo" action="/autoveicolos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==" />
+   
+
+ <div class="field">
+     <input type="hidden" size= "30" class="form-control" name="autoveicolos[user_id]" id="autoveicolos_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+    <label for="autoveicolos_targa">Targa</label>
+    <input type="text" size= "30" class="form-control" name="autoveicolos[targa]" id="autoveicolos_targa" />
+  </div>
+
+  <div class="field">
+    <label for="autoveicolos_modello">Modello</label>
+    <input type="text" name="autoveicolos[modello]" size= "30" class="form-control" id="autoveicolos_modello" />
+  </div>
+
+  
+
+  <div class="field">
+    <label for="autoveicolos_kilometri">Kilometri</label>
+    <input type="text" name="autoveicolos[kilometri]" size="30" class="form-control" id="user_password" />
+  </div>
+
+  <div class="field">
+    <label for="autoveicolos_carburante">Carburante</label>
+    <select name="autoveicolos[carburante]" id="autoveicolos_carburante" style="width: 250px">
+        <option value="Diesel"> Diesel</option>
+        <option value="Benzina"> Benzina</option>
+	<option value="GPL"> GPL</option>
+	<option value="Metano"> Metano</option>
+    </select>
+  </div>
+
+  <div class="actions">
+  <input type="submit" name="commit" value="Salva Dati" class="btn btn-primary btn-lg" data-disable-with="Create User" />
+  </div>
+
+</form>
+</div>
+
+</div>
+
+
+</registrazione>
+</body>

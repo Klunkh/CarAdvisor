@@ -1,0 +1,13 @@
+module AutoveicolosHelper
+
+def get_auto(input)	
+      ret = autoveicolo_targa
+      
+
+end 
+
+def targa
+ ret=Autoveicolo.find(params[:targa])
+end
+
+end

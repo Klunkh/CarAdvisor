@@ -29,11 +29,19 @@ a {
 }
 
 .registrazione{
+  
+  padding-bottom: 950px;
+  background-color: #FFF;
+  padding-top: 400px;
+  text-align: center;
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+} 
+.tabella{
   padding-top: 20px;
   padding-bottom: 450px;
   background-color: #FFF;
   padding-top: 40px;
-  text-align: center;
   line-height: 150%;
   font-family: 'Raleway', sans-serif;
 } 
@@ -152,7 +160,7 @@ font-size: medium;
 padding-top: 20px; 
 padding-bottom: 40px; 
 vertical-align: center; 
-background-color: #FFFF80;
+background-color: #FFDEAD;
 font-family: 'Raleway', sans-serif;
 text-align: center;
 font-size: medium;
@@ -169,4 +177,10 @@ font-size: medium;
  position:relative;
  top:0;
  right:0;
+ }
+ 
+ /* per rimetterlo come prima eliminare class trasparente e incollare style="background-color:#4287CA" */
+ .trasparente{
+ background: url('/assets/vuota.png');
+ 
  }

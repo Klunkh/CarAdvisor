@@ -1,0 +1,3 @@
+class Officina < ApplicationRecord
+  belongs_to :user
+end

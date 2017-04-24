@@ -1,0 +1,54 @@
+
+ <head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class="registrazione">
+<h1>Modifica Autoveicolo</h1>
+<br/>
+<br/>
+<div class="col-md-4 col-md-offset-4">
+    <form class="edit_autoveicolo" id="edit_autoveicolo_" action="/autoveicolos/<%= @autoveicolo.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" /><input type="hidden" name="authenticity_token" value="LU8alkMCfZjpiX2zaZ3LpjAdvbkE2Ltwdy8O25gdDP73BlQezn/R/4C1ERZPyCG8Gv2GovOxY2WdRX6Z6FY9EA==" />
+      
+
+      <label for="autoveicolo_modello">Modello</label>
+      <input class="form-control" type="text" name="autoveicolos[modello]" id="autoveicolos_modello" />
+      
+	<% if params[:autoveicolo_modello]=="" %>
+	<input class="form-control" type="hidden" name="autoveicolos[modello]" id="autoveicolos_modello" value="<%= @autoveicolo.modello %>" />
+	
+		<% end %>
+      <label for="autoveicolo_targa">Targa</label>
+      <input class="form-control" type="text" name="autoveicolos[targa]" id="autoveicolos_targa" />
+	
+      <label for="autoveicolo_kilometri">Kilometri</label>
+      <input class="form-control" type="text" name="autoveicolos[kilometri]" id="autoveicolos_kilometri" />
+     <% if params[:autoveicolo_kilometri]==nil %>
+	<input class="form-control" type="hidden" name="autoveicolos[kilometri]" id="autoveicolos_kilometri" value="<%= @autoveicolo.kilometri %>" />
+	
+<% end %>
+
+      <label for="autoveicolo_carburante">Carburante</label>
+      <select name="autoveicolos[carburante]" id="autoveicolos_carburante" style="width: 250px">
+        <option value="nil" selected="selected"> </option>
+        <option value="Diesel"> Diesel</option>
+        <option value="Benzina"> Benzina</option>
+	<option value="GPL"> GPL</option>
+	<option value="Metano"> Metano</option>
+    </select>
+<% if params[:autoveicolo_carburante]=="nil" %>
+	<input class="form-control" type="hidden" name="autoveicolo[carburante]" id="autoveicolo_carburante" value="<%= @autoveicolo.carburante %>" />
+	
+<% end %>
+  
+      <input type="hidden" name="autoveicolos[user_id]" id="autoveicolos_user_id" value="<%= current_id %>" />
+ <br/>
+<br/>
+<input type="submit" name="commit" value="Salva" class="btn btn-primary btn-block" data-disable-with="Salvataggio.." />
+</form>
+<br/>
+</div>
+</div>
+   
+
+</div>
+</div>

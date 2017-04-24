@@ -1,0 +1,38 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class= "tabella">
+<h1>Indice officine</h1>
+<br/>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th class=pers>Indirizzo</th>
+      <th class=pers>Contatto</th>
+      <th class=pers>Numero di telefono</th>
+      <th class=pers>Opzioni</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<% if current_user.admin?  %>
+<% @officina.each do |officina| %>
+<tr>
+	<td> <%= officina.indirizzo %></td>
+        <td> <%= officina.contatto %></td>
+        <td> <%= officina.numero_telefono %></td>
+	<td> <a href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra</a> 
+	<a data-confirm="Sicuro di voler eliminare questo veicolo?" rel="nofollow" class="modPers" data-method="delete" href="/officinas/<%= officina.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina</a></p> </td>
+<% end %>
+<% else %>
+
+<% @officina.where(user_id: current_id).find_each do |officina| %>
+<tr>
+	<td> <%= officina.indirizzo %></td>
+        <td> <%= officina.contatto %></td>
+        <td> <%= officina.numero_telefono %></td>
+	<td> <a href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra</a>
+	<a data-confirm="Sicuro di voler eliminare questo veicolo?" rel="nofollow" class="modPers" data-method="delete" href="/officinas/<%= officina.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina</a></p> </td>
+<% end %>
+<% end %>
+</tr>
+</div>

@@ -1,0 +1,61 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+
+<p id="notice"><%= notice %></p>
+<div class="datiPers">
+<h1>Dati del Veicolo </h1>
+<div class= "col-md-4">
+<p class=pers> 
+  <strong>Modello:</strong>
+  <%= @autoveicolo.modello %>
+</p>
+
+<p class=pers>
+  <strong>Targa:</strong>
+  <%= @autoveicolo.targa %>
+</p>
+
+<p class=pers>
+  <strong>Carburante:</strong>
+  <%= @autoveicolo.carburante %>
+</p>
+
+<p class=pers>
+  <strong>Km:</strong>
+  <%= @autoveicolo.kilometri %>
+</p>
+
+<p>
+   <a href="http://localhost:3000/autoveicolos/<%= @autoveicolo.id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
+</p>
+
+<p>
+<a data-confirm="Sicuro di voler eliminare questo veicolo?" rel="nofollow" class="modPers" data-method="delete" href="/autoveicolos/<%= @autoveicolo.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Veicolo</a>
+</p>
+</div>
+<br/>
+<div class= "col-md-7">
+<table class="table table-bordered table-hover">
+ <thead>
+    <th> Data </th>
+    <th> Meccanico </th>
+    <th> Oggetto </th>
+    <th> Km alla consegna</th>
+    <th> Costo </th>
+</thead>
+<tr>
+    <% @operazione.where(targa: @autoveicolo.id).find_each do |operazione| %>
+     <td> <%= operazione.data %> </td>
+     <td> <%= find_nome_meccanico(operazione.meccanico) %> </td>
+     <td width="200"> <%= operazione.oggetto %> </td>
+     <td align="center"> <%= operazione.km %> </td>
+     <td> <%= operazione.costo %> €</td>
+</tr>
+<% end %>
+
+</table>
+</div>
+
+</div>
+

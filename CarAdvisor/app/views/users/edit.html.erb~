@@ -12,7 +12,7 @@
       <%= gravatar_for @user %>
 <br/>
 <br/>
-      <a href="http://gravatar.com/emails" target=_blank>Cambia immagine</a>
+      <a href="http://gravatar.com/emails" target=_blank class="modPers">Cambia immagine</a>
 </div>
 
 
@@ -22,10 +22,18 @@
       
 
       <label for="user_name">Nome</label>
-      <input class="form-control" type="text" value="test" name="user[nome]" id="user_nome" />
-
+      <input class="form-control" type="text" name="user[nome]" id="user_nome"  />
+      <% if params[:user_nome]==nil %>
+	<input class="form-control" type="hidden" name="user[nome]" id="user_nome" value="<%= @user.nome %>" />
+	
+<% end %>
+	
       <label for="user_email">Email</label>
-      <input class="form-control" type="email" value="test@email.com" name="user[email]" id="user_email" />
+      <input class="form-control" type="email" name="user[email]" id="user_email"/>
+
+	<% if params[:user_email]==nil %>
+	<input class="form-control" type="email" name="user[email]" id="user_email"  value="<%= @user.email %>"/>
+	<% end %>
 
       <label for="user_password">Password</label>
       <input class="form-control" type="password" name="user[password]" id="user_password" />

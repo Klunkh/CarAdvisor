@@ -1,0 +1,68 @@
+
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body style="background-color: #1aa3ff" class="test">
+<div class="registrazione">
+<h1>Operazioni</h1>
+
+<% if @operazioni.errors.any? %>
+    <% @operazioni.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+<% end %>
+<% end %>
+
+
+<div class="col-md-4 col-md-offset-4">
+
+<form class="new_user" id="new_user" action="/operazionis" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+ <div class="field">
+    <input type="hidden" name="operazionis[user_id]" size= "30" class="form-control"  id="operazionis_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+    <label for="operazionis_oggetto">Oggetto</label>
+    <textarea rows="4" cols="30" class="form-control" name="operazionis[oggetto]" id="operazionis_oggetto"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="operazionis_km">Km</label>
+    <input type="text" name="operazionis[km]" size= "30" class="form-control" id="operazionis_km" />
+  </div>
+  <div class="field">
+    
+  </div>
+  <div class="field">
+    <label for="operazionis_costo">Costo</label>
+    <input type="text" name="operazionis[costo]" size= "30" class="form-control" id="operazionis_costo" />
+  </div>
+
+
+ <div class="field">
+    <label for="operazionis_data">Data</label>
+    <input type="date" name="operazionis[data]" size= "30" class="form-control"  id="operazionis_data" />
+  </div>
+ <div class="field">
+<label for="operazionis_targa">Targa Autoveicolo</label>
+ 
+<%= collection_select(:operazionis, :targa, Autoveicolo.where(user_id: current_id), :id, :get_targa) %>
+
+</div>
+	<div>
+    <label for="operazionis_meccanico">Meccanico</label>
+
+ <%= collection_select(:operazionis, :meccanico, User.where(tipo:true), :id, :get_meccanico) %>
+</div>
+ 
+
+  <div class="actions">
+ <br/>
+  <input type="submit" name="commit" value="Aggiungi operazione" class="btn btn-primary btn-lg" data-disable-with="Aggiungi operazione" />
+  </div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>

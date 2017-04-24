@@ -1,0 +1,34 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class="registrazione">
+<h1>Modifica Officina</h1>
+<br/>
+<br/>
+<div class="col-md-4 col-md-offset-4">
+    <form class="edit_autoveicolo" id="edit_autoveicolo_" action="/officinas/<%= @officina.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" /><input type="hidden" name="authenticity_token" value="LU8alkMCfZjpiX2zaZ3LpjAdvbkE2Ltwdy8O25gdDP73BlQezn/R/4C1ERZPyCG8Gv2GovOxY2WdRX6Z6FY9EA==" />
+      
+
+      <label for="officinas_indirizzo">Indirizzo</label>
+      <input class="form-control" type="text" name="officinas[indirizzo]" id="officinas_indirizzo" />
+
+      <label for="officinas_contatto">Contatto</label>
+      <input class="form-control" type="text" name="officinas[contatto]" id="officinas_contatto" />
+
+      <label for="officinas_numero_telefono">Numero di telefono</label>
+      <input class="form-control" type="text" name="officinas[numero_telefono]" id="officinas_numero_telefono" />
+
+      
+  
+      <input type="hidden" name="officinas[user_id]" id="officinas_user_id" value="<%= current_id %>" />
+ <br/>
+<br/>
+<input type="submit" name="commit" value="Salva" class="btn btn-primary btn-block" data-disable-with="Salvataggio.." />
+</form>
+<br/>
+</div>
+</div>
+   
+
+</div>
+</div>

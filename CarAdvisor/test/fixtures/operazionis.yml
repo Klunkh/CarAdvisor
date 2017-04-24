@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  km: 
+  data: 2017-04-23
+  oggetto: MyString
+  meccanico: MyString
+
+two:
+  user: two
+  km: 
+  data: 2017-04-23
+  oggetto: MyString
+  meccanico: MyString

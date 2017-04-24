@@ -1,0 +1,1 @@
+<%= @user.errors.full_messages.first if @user.errors.any? %>  per far stampare solo il primo dei messaggi di errore dei form

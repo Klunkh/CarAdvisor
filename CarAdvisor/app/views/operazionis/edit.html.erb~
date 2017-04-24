@@ -1,0 +1,40 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class="registrazione">
+<h1>Modifica Autoveicolo</h1>
+<br/>
+<br/>
+<div class="col-md-4 col-md-offset-4">
+    <form class="edit_operazioni" id="edit_operazioni_" action="/operazionis/<%= @operazioni.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" /><input type="hidden" name="authenticity_token" value="LU8alkMCfZjpiX2zaZ3LpjAdvbkE2Ltwdy8O25gdDP73BlQezn/R/4C1ERZPyCG8Gv2GovOxY2WdRX6Z6FY9EA==" />
+      
+
+      <label for="operazioni_oggetto">Oggetto</label>
+      <input class="form-control" type="text" name="operazionis[oggetto]" id="operazionis_oggetto" value= "<%=@operazioni.oggetto %>"/>
+      <label for="operazioni_km">Km</label>
+      <input class="form-control" type="text" name="operazionis[km]" id="operazionis_km" value= "<%=@operazioni.km %>" />
+ <label for="operazioni_targa">Targa</label>
+      <input class="form-control" type="text" name="operazionis[targa]" id="operazionis_targa" value= "<%=@operazioni.targa %>" />
+ <label for="operazioni_km">Costo</label>
+      <input class="form-control" type="text" name="operazionis[costo]" id="operazionis_costo" value= "<%=@operazioni.costo %>" />
+	
+      <label for="operazioni_data">Data</label>
+      <input class="form-control" type="text" name="operazionis[data]" id="operazionis_data" value="<%=@operazioni.data %>"/>
+
+      <label for="operazioni_meccanico">Meccanico</label>
+      <input class="form-control" type="text" name="operazionis[meccanico]" id="operazionis_meccanico" value="<%=@operazioni.meccanico %>"/>
+
+  
+      <input type="hidden" name="operazionis[user_id]" id="operazionis_user_id" value="<%= current_id %>" />
+ <br/>
+<br/>
+<input type="submit" name="commit" value="Salva" class="btn btn-primary btn-block" data-disable-with="Salvataggio.." />
+</form>
+<br/>
+</div>
+</div>
+   
+
+</div>
+</div>
+

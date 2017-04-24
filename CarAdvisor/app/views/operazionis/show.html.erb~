@@ -1,0 +1,44 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class="datiPers">
+<div class="container-fluid">
+
+<p id="notice"><%= notice %></p>
+
+<h1>Operazione effettuata: </h1>
+<div class = "row" >
+	<div class= "col-md-5">
+<p class=pers> 
+  <strong>Oggetto:</strong>
+  <%= @operazioni.oggetto %>
+</p>
+
+<p class=pers>
+  <strong>km:</strong>
+  <%= @operazioni.km %>
+</p>
+
+<p class=pers>
+  <strong>Data:</strong>
+  <%= @operazioni.data %>
+</p>
+
+<p class=pers>
+  <strong>Meccanico:</strong>
+  <%= @operazioni.meccanico %>
+</p>
+</div>
+<div class= "col-md-3">
+<p>
+   <a href="http://localhost:3000/operazionis/<%= current_id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> &nbsp; Modifica Operazione</a>
+</p>
+<p>
+<a data-confirm="Sicuro di voler eliminare questa operazione?" rel="nofollow" class="modPers" data-method="destroy" href="/operazionis/<%= @operazioni.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Operazione</a></p>
+</p>	
+</div>
+
+</div>
+
+</div>
+</div>

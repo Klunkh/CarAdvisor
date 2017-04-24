@@ -1,0 +1,29 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+
+<p id="notice"><%= notice %></p>
+<div class="datiPers">
+<h1>Dati dell'officina </h1>
+<p class=pers> 
+  <strong>Indirizzo:</strong>
+  <%= @officina.indirizzo %>
+</p>
+
+<p class=pers>
+  <strong>Contatto:</strong>
+  <%= @officina.contatto %>
+</p>
+
+<p class=pers>
+  <strong>Numero di telefono:</strong>
+  <%= @officina.numero_telefono %>
+</p>
+
+<p>
+   <a href="http://localhost:3000/officinas/<%= @officina.id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
+</p>
+<br/>
+<p>
+<a data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow" class="modPers" data-method="delete" href="/officinas/<%= @officina.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Officina</a></p>
+</div>
