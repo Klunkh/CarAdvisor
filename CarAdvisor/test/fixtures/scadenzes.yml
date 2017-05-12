@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  tipo: MyString
+  dataStipulazione: 2017-04-25
+  km: 1.5
+  tipoScadenza: MyString
+
+two:
+  user: two
+  tipo: MyString
+  dataStipulazione: 2017-04-25
+  km: 1.5
+  tipoScadenza: MyString

@@ -1,11 +1,14 @@
 <head>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
+<div class="datiPers">
+<div class="container-fluid">
 
 <p id="notice"><%= notice %></p>
-<div class="datiPers">
-<h1>Dati Personali </h1>
 
+<h1>Dati Personali </h1>
+<div class = "row" >
+	<div class= "col-md-5">
 <p class=pers> 
   <strong>Nome:</strong>
   <%= @user.nome %>
@@ -23,20 +26,33 @@
 
 <p class=pers>
   <strong>Tipo:</strong>
-  <%= @user.tipo %>
+  <% if @user.tipo==true %>
+		Meccanico
+		
+  <% else %>
+		Utente
+	
+	<% end %>
 </p>
-
+</div>
+<div class= "col-md-4">
 <p>
-   <a href="http://localhost:3000/users/<%= current_id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
+   <a href="http://localhost:3000/users/<%= current_id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> &nbsp; Modifica dati</a>
 </p>
-	<% if !@user.tipo? %>
+<p>
+   <a href="http://localhost:3000/scadenzes/new" class="modPers"><span class="glyphicon glyphicon-plus"></span> &nbsp; Aggiungi Scadenza</a>
+</p>
+	<% if @user.tipo? %>
 	<p>
-		<a href="http://localhost:3000/officinas/index" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Le tue officine</a>
+		<a href="http://localhost:3000/officinas/index" class="modPers"><span class="glyphicon glyphicon-wrench"></span> &nbsp; Le tue officine</a>
 	 </p>
 	<% end %>
 <p>
-<a href="http://localhost:3000/autoveicolos/new" class="modPers"><span class="glyphicon glyphicon-plus"></span> Aggiungi veicolo</a>
+<a href="http://localhost:3000/autoveicolos/" class="modPers"><span class="glyphicon glyphicon-heart-empty"></span> I tuoi veicoli</a>
 </p>
 </div>
 
+</div>
 
+</div>
+</div>

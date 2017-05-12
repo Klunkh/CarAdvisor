@@ -4,7 +4,36 @@
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 
 </head>
-<body background="/home/biar/Desktop/sfondo.jpg">
-        
+<body class="sfondo">
+    <% if logged_in? %>
+    <span class="full-width-bar">
+        <div class="col-lg-5">
+                <h1>Benvenuto <%= current_user.nome %>! </h1>
+                <p>Di quale veicolo ti vuoi occupare oggi?</p>
+                <% @autoveicolo.where(user_id: current_id).find_each do |autoveicolo| %>
+                <br/>
+                <li><a href="http://localhost:3000/autoveicolos/<%= autoveicolo.id %>"> <%= autoveicolo.targa %> </a></li>
+                <% end %>
+        </div>
+        <div class="col-lg-7">
+            <h2>Scadenze entro 30 giorni</h2>
+            <table class="table table-bordered table-hover">
+            <th> Targa Veicolo</th>
+            <th> Scadenza </th>
+            <th> Data Stimata </th>
+            <% @scadenze.where(user_id: current_id, notificato: 'f').find_each do |scadenze| %>
+            <tr>
+            <% if (scadenze.data_scadenza).to_i> @data_passata %>
+            <td><%= @autoveicolo.find(scadenze.targa).targa %></td>
+            <td><%= scadenze.tipo %></td>
+            <td><%= scadenze.data_scadenza.to_s.to_date %></td>
+            <% end %>
+            </tr>
+            <% end %>
+            </table>
+            
+    </span>
+    <% end %>    
 </body>
+ 
 </html>

@@ -1,0 +1,163 @@
+<html>
+ <script type="text/javascript">
+$(document).ready(function()
+{
+ $(".km_attuali").hide();
+ $(".data_assicurazione").hide();
+ $(".tipo_scadenza").hide();
+$(".data_revisione").hide();
+$(".data_bollo").hide();
+$(".scadenza_gomme").hide();
+$(".scadenza_tagliando").hide();
+ $("#scadenzes_tipo").change(function()
+ {
+  if($(this).val() == "Assicurazione")
+  {
+   $(".tipo_scadenza").show();
+   $(".data_assicurazione").show();
+   $(".km_attuali").hide();
+$(".data_revisione").hide();
+$(".data_bollo").hide();
+$(".scadenza_tagliando").hide();
+  }
+  else if($(this).val() == "Gomme")
+  {
+  
+   $(".data_assicurazione").hide();
+   $(".tipo_scadenza").hide();
+   $(".km_attuali").hide();
+$(".data_revisione").hide();
+$(".data_bollo").hide();
+$(".scadenza_gomme").show();
+$(".scadenza_tagliando").hide();
+  }
+  else if($(this).val() == "Tagliando")
+  {
+  
+   $(".data_assicurazione").hide();
+   $(".tipo_scadenza").hide();
+   $(".km_attuali").show();
+$(".data_revisione").hide();
+$(".data_bollo").hide();
+$(".scadenza_gomme").hide();
+$(".scadenza_tagliando").show();
+  }
+  else if($(this).val() =="Revisione"){
+	$(".data_revisione").show();
+	$(".data_assicurazione").show();
+        $(".tipo_scadenza").hide();
+        $(".km_attuali").hide();
+        $(".data_bollo").hide();
+        $(".scadenza_gomme").hide();
+	$(".scadenza_tagliando").hide();
+
+}
+else if($(this).val() =="Bollo"){
+	$(".data_revisione").hide();
+	$(".data_assicurazione").hide();
+        $(".tipo_scadenza").hide();
+        $(".km_attuali").hide();
+	$(".data_bollo").show();
+     $(".scadenza_gomme").hide();
+$(".scadenza_tagliando").hide();
+
+}
+ });
+
+});
+
+</script>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body style="background-color: #1aa3ff" class="test">
+<div class="registrazione">
+<h1>Aggiungi Scadenza</h1>
+
+<% if @scadenze.errors.any? %>
+    <% @scadenze.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+<% end %>
+<% end %>
+
+
+<div class="col-md-4 col-md-offset-4">
+
+<form class="new_user" id="new_user" action="/scadenzes" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+ <div class="field">
+    <input type="hidden" name="scadenzes[user_id]" size= "30" class="form-control"  id="scadenzes_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+    <label for="scadenzes_tipo">Tipo</label>
+    <select name="scadenzes[tipo]" id="scadenzes_tipo">
+      <option selected disabled value="">Inserisci la scadenza da ricordare </option>
+      <option value="Assicurazione">Assicurazione</option>
+      <option value="Revisione">Revisione</option>
+      <option value="Tagliando">Tagliando</option>
+      <option value="Bollo">Bollo</option>
+      <option value="Gomme">Gomme</option>
+      <option value="Cambio Olio">Cambio Olio</option>
+  </select>
+  </div>
+
+  <div class="km_attuali">
+    <label for="operazionis_km">Kilometri necessari per l'avviso</label>
+    <input type="text" name="scadenzes[km]" size= "30" class="form-control" id="scadenzes_km" />
+  </div>
+
+<div class="scadenza_gomme">
+    <label for="scadenzes_tipoScadenza">Data ultimo cambio gomme</label>
+     <input type="hidden" value="45000" name="scadenzes[km]" size= "30" class="form-control" id="scadenzes_km" />
+    <input type="date" name="scadenzes[dataStipulazione]" size= "30" class="form-control"  id="scadenzes_dataStipulazione" />
+  </div>
+<div class="scadenza_tagliando">
+    <label for="scadenzes_tipoScadenza">Data ultimo Tagliando</label>
+     <input type="hidden" value="20000" name="scadenzes[km]" size= "30" class="form-control" id="scadenzes_km" />
+    <input type="date" name="scadenzes[dataStipulazione]" size= "30" class="form-control"  id="scadenzes_dataStipulazione" />
+  </div>
+
+  <div class="data_assicurazione">
+    <label for="scadenzes_data">Data Stipulazione </label>
+    <input type="date" name="scadenzes[dataStipulazione]" size= "30" class="form-control"  id="scadenzes_dataStipulazione" />
+  </div>
+<div class="data_bollo">
+    <label for="scadenzes_data">Data ultimo Bollo</label>
+    <input type="date" name="scadenzes[dataStipulazione]" size= "30" class="form-control"  id="scadenzes_dataStipulazione" />
+  </div>
+
+<div class="data_revisione">
+    <label for="scadenzes_tipoScadenza">Revisione</label>
+    <select name="scadenzes[tipoScadenza]" id="scadenzes_tipoScadenza" />
+    <option value="">Inserisci il tipo di Revisione </option>
+    <option value="48">Prima Revisione</option>
+    <option value="24">Revisioni successive</option>
+  </select>
+  </div>
+ <div class="tipo_scadenza">
+    <label for="scadenzes_tipoScadenza">Tipo di Scadenza</label>
+    <select name="scadenzes[tipoScadenza]" id="scadenzes_tipoScadenza" />
+    <option value="">Inserisci il tipo di Scadenza </option>
+    <option value="1">Mensile</option>
+    <option value="2">Bimestrale</option>
+    <option value="3">Trimestrale</option>
+    <option value="6">Semestrale</option>
+    <option value="12">Annuale</option>
+   </select>
+  </div>
+<div class="macchina_riferimento">
+<label for="scadenzes_data">Macchina</label>
+<%= collection_select(:scadenzes, :targa, Autoveicolo.where(user_id: current_id), :id, :get_targa) %>
+</div>
+  <br/>
+  <div class="actions">
+    <input type="submit" name="commit" value="Aggiungi operazione" class="btn btn-primary btn-lg" data-disable-with="Aggiungi operazione" />
+  </div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

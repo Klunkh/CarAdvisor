@@ -1,6 +1,9 @@
 class Autoveicolo < ApplicationRecord
   #belongs_to :user
-  has_many :operazionis
+  #has_many :operazionis, dependent: :destroy
+  #has_many :notificas, dependent: :destroy
+  #has_many :scadenzes, dependent: :destroy
+
   VALID_TARGA_REGEX=/\A([A-Z]{2})([0-9]{3,4})([A-Z]{2,3})\z/i
   VALID_MODELLO_REGEX=/\A([A-Z][a-z]+)(\s?[A-Z][a-z]*'?[a-z]+)*\z/i
   

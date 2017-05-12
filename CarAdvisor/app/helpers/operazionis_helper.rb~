@@ -1,0 +1,10 @@
+module OperazionisHelper
+
+def update_kilometri(id_macchina, km_attuali)
+	@autoveicolo=Autoveicolo.all
+	@autoveicolo.where(id: id_macchina).find_each do |autoveicolo|
+		autoveicolo.km=km_attuali
+end
+end
+	
+end

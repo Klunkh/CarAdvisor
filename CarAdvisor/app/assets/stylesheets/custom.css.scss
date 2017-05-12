@@ -22,6 +22,13 @@ h1 {
   line-height: 150%;
   font-family: 'Raleway', sans-serif;
 }
+h2{
+  word-spacing: 5px;
+  text-align: center;
+  line-height: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px ;
+}
 a {
   font-weight: bold;
   line-height: 150%;
@@ -37,6 +44,16 @@ a {
   line-height: 150%;
   font-family: 'Raleway', sans-serif;
 } 
+.full-width-bar {
+  overflow:auto;
+  margin: 0 -999rem;
+  padding: 0.25rem 9999rem;
+  padding-bottom: 650px;
+ 
+  background: #FFF;
+  opacity: 0.9;
+}
+
 .tabella{
   padding-top: 20px;
   padding-bottom: 450px;
@@ -97,6 +114,7 @@ textarea {
 }
 
 .datiPers{
+  overflow: auto;
   padding-top: 20px;
   padding-bottom: 450px;
   background-color: #FFF;
@@ -131,6 +149,13 @@ textarea {
 font-family: 'Raleway', sans-serif;
 }
 .sfondo {  background: url('/assets/sfondocar.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+                           
+}
+.sfondo_senza_scritta {  background: url('/assets/sfondo_senza_scritta.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -178,9 +203,23 @@ font-size: medium;
  top:0;
  right:0;
  }
- 
+
  /* per rimetterlo come prima eliminare class trasparente e incollare style="background-color:#4287CA" */
  .trasparente{
  background: url('/assets/vuota.png');
  
  }
+.dropdown-menu{
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    min-width: 1200 px;
+   
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+    color: black;
+}
+
+

@@ -1,5 +1,12 @@
 
 <head>
+<script type="text/javascript">
+ $(document).ready(function() {
+    var e =document.getElementByName("operazionis[km]");
+    var c =document.getElementByName("operazionis[targa]");
+  });
+
+</script>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
 <body style="background-color: #1aa3ff" class="test">
@@ -21,7 +28,7 @@
   </div>
   <div class="field">
     <label for="operazionis_oggetto">Oggetto</label>
-    <input type="text" size= "30" class="form-control" name="operazionis[oggetto]" id="operazionis_oggetto" />
+    <textarea rows="4" cols="30" class="form-control" name="operazionis[oggetto]" id="operazionis_oggetto"></textarea>
   </div>
 
   <div class="field">
@@ -44,7 +51,7 @@
  <div class="field">
 <label for="operazionis_targa">Targa Autoveicolo</label>
  
-<%= collection_select(:operazionis, :targa, Autoveicolo.where(user_id: current_id, :id, :get_targa)) %>
+<%= collection_select(:operazionis, :targa, Autoveicolo.where(user_id: current_id), :id, :get_targa) %>
 
 </div>
 	<div>
@@ -53,6 +60,7 @@
  <%= collection_select(:operazionis, :meccanico, User.where(tipo:true), :id, :get_meccanico) %>
 </div>
  
+<% update_kilometri(@c, @e) %>
 
   <div class="actions">
  <br/>

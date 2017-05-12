@@ -26,12 +26,18 @@
 
 <p class=pers>
   <strong>Meccanico:</strong>
-  <%= @operazioni.meccanico %>
+  <% @user.where(tipo: 't', id: @operazioni.meccanico ).find_each do |utente| %>
+    <%= utente.nome  %> <%= utente.cognome %>
+    <% end %>
+</p>
+<p class=pers>
+  <strong>Costo:</strong>
+  <%= @operazioni.costo %>
 </p>
 </div>
-<div class= "col-md-3">
+<div class= "col-md-7">
 <p>
-   <a href="http://localhost:3000/operazionis/<%= current_id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> &nbsp; Modifica Operazione</a>
+   <a href="http://localhost:3000/operazionis/<%= @operazioni.id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica Operazione</a>
 </p>
 <p>
 <a data-confirm="Sicuro di voler eliminare questa operazione?" rel="nofollow" class="modPers" data-method="delete" href="/operazionis/<%= @operazioni.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Operazione</a></p>

@@ -1,10 +1,137 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :notifica
+  before_action :controlloScadenze
+  
+ 
+ 
+ 
+private
+def controlloScadenze
+  require 'date'
+  @scadenze=Scadenze.all
+  @autoveicolo=Autoveicolo.all
+  @scadenze.where(notificato: 'f').find_each do |scadenze|
+	
+	if(scadenze.tipo =="Assicurazione")
+		oggi=get_data()
+  		scadenza=scadenze.dataStipulazione
+  		giorni=(oggi.mjd - scadenza.mjd).to_i
+		rinnovo=(((scadenze.tipoScadenza).to_i)*30).to_i
+		if(giorni>rinnovo)
+			create_notifica(scadenze.targa, "Scadenza Assicurazione Prossima")
+			scadenze.update(:notificato => 't')
+		end
+	
+	elsif(scadenze.tipo=="Gomme") 
+		@autoveicolo.where(id: scadenze.targa).find_each do |autoveicolo|
+		km_medi_giorno=autoveicolo.media
+		data_creazione=((scadenze.created_at).to_date).mjd #=> conversione del created_at in mjd
+		giorni_necessari=(((scadenze.km).to_i/km_medi_giorno.to_i)+data_creazione) #=> calcolo dei Km_desiderati_per_cambio_gomme\media_km_giornalieri
+		
+		#creazione della prima scadenza.
+		if(scadenze.data_scadenza.nil?)
+			scadenze.update(:data_scadenza => giorni_necessari.to_f)
+		
+		#se mancano 5 giorni al giorno stimato del cambio gomme crea la notifica e setta il notificato
+		elsif(scadenze.data_scadenza-5<get_data().mjd || (data_creazione+(365*3))-5<get.data().mjd)
+			create_notifica(scadenze.targa, "Necessario cambio gomme a breve")
+			scadenze.update(:notificato => 't')
+		
+		#se è passato almento un giorno dal giorno della creazione della notifica aggiorna i giorni_necessari nel caso siano cambiati i km_medi_al_giorno	
+		elsif(data_creazione<get_data().mjd)
+			print("UPDATE_SCADENZA_MEDIA \n")
+			giorni_necessari=(((scadenze.km).to_i/km_medi_giorno.to_i)+data_creazione)
+			scadenze.update(:data_scadenza => giorni_necessari.to_f)
+			
+		
+		end
+	end
 
-def hello
-    render html: "Proviamo a iniziare CarAdvisor"
-  end
+    
+    elsif(scadenze.tipo=="Tagliando")
+        @autoveicolo.where(id: scadenze.targa).find_each do |autoveicolo|
+        if(autoveicolo.media.nil?)
+		autoveicolo.update(:media => 1)
+	end
+	km_medi_giorno=autoveicolo.media
+        data_creazione=((scadenze.created_at).to_date).mjd
+        giorni_necessari=(((scadenze.km).to_i/km_medi_giorno.to_i)+data_creazione)
+        
+        if(scadenze.data_scadenza.nil?)
+            scadenze.update(:data_scadenza => giorni_necessari.to_f)
+            
+        elsif(scadenze.data_scadenza-5<get_data().mjd || (data_creazione+360)<get.data().mjd)
+            print("Creazione Notifica Tagliando...")
+            create_notifica(scadenze.targa, "Tagliando necessario tra pochi giorni")
+            scadenze.update(:notificato => 't')
+        elsif(scadenze.data_scadenza<get_data().mjd)
 
+            create_notifica(scadenze.targa, "Tagliando scaduto")
+            scadenze.update(:notificato => 't')
+        elsif(data_creazione<get_data().mjd)
+            print("UPDATE_SCADENZA_MEDIA_TAGLIANDO \n")
+			giorni_necessari=(((scadenze.km).to_i/km_medi_giorno.to_i)+data_creazione)
+			scadenze.update(:data_scadenza => giorni_necessari.to_f)
+        end
+    end
+
+    elsif(scadenze.tipo=="Revisione")
+	@autoveicolo.where(id: scadenze.targa).find_each do |autoveicolo|
+        if(autoveicolo.media.nil?)
+		autoveicolo.update(:media => 1)
+	end
+	data_stipulazione=((scadenze.dataStipulazione).to_date).mjd
+	scadenza_revisione=(((scadenze.tipoScadenza).to_i)*30).to_i
+	scadenza_prevista=(data_stipulazione.to_i)+scadenza_revisione
+	if(scadenza_prevista-7<=get_data().mjd)
+            create_notifica(scadenze.targa, "Scadenza Revisione tra pochi giorni")
+            scadenze.update(:notificato => 't')
+	elsif(scadenza_prevista < get_data().mjd)
+	    create_notifica(scadenze.targa, "Revisione scaduta")
+            scadenze.update(:notificato => 't')
+	end
+	end
+
+    elsif(scadenze.tipo=="Bollo")
+	@autoveicolo.where(id: scadenze.targa).find_each do |autoveicolo|
+        if(autoveicolo.media.nil?)
+		autoveicolo.update(:media => 1)
+	end
+	data_stipulazione=((scadenze.dataStipulazione).to_date).mjd
+        scadenza_bollo=data_stipulazione.to_i+365
+	if(scadenza_bollo-7<=get_data().mjd)
+            create_notifica(scadenze.targa, "Scadenza Bollo tra pochi giorni")
+            scadenze.update(:notificato => 't')
+	end 
+	end
+ end
+end
+end 
+
+
+
+
+
+def get_data()
+	oggi=Time.now.strftime("%Y/%m/%d")
+  	oggi=Date.parse(oggi)
+	return oggi
+end
+
+
+	
+def notifica 
+  @notifica=Notifica.all
+end
+
+
+def create_notifica(id_macchina,msg)
+     Notifica.create(user_id: current_id,
+                        notified_by_id: id_macchina ,
+                        tipo: msg,
+                        )
+end
 include SessionsHelper
 
 

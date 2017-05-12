@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423145526) do
+ActiveRecord::Schema.define(version: 20170429153143) do
 
   create_table "autoveicolos", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,7 +20,19 @@ ActiveRecord::Schema.define(version: 20170423145526) do
     t.float    "kilometri"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "media"
     t.index ["user_id"], name: "index_autoveicolos_on_user_id"
+  end
+
+  create_table "notificas", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "notified_by_id"
+    t.string   "tipo"
+    t.boolean  "read",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["notified_by_id"], name: "index_notificas_on_notified_by_id"
+    t.index ["user_id"], name: "index_notificas_on_user_id"
   end
 
   create_table "officinas", force: :cascade do |t|
@@ -44,6 +56,20 @@ ActiveRecord::Schema.define(version: 20170423145526) do
     t.string   "targa"
     t.float    "costo"
     t.index ["user_id"], name: "index_operazionis_on_user_id"
+  end
+
+  create_table "scadenzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "tipo"
+    t.date     "dataStipulazione"
+    t.float    "km"
+    t.string   "tipoScadenza"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "notificato",       default: false
+    t.string   "targa"
+    t.date     "data_scadenza"
+    t.index ["user_id"], name: "index_scadenzes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

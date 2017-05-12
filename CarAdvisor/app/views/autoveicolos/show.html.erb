@@ -34,8 +34,10 @@
 <a data-confirm="Sicuro di voler eliminare questo veicolo?" rel="nofollow" class="modPers" data-method="delete" href="/autoveicolos/<%= @autoveicolo.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Veicolo</a>
 </p>
 </div>
-<br/>
+
 <div class= "col-md-7">
+<h2 align="center"> Operazioni Effettuate </h2>
+<br/>
 <table class="table table-bordered table-hover">
  <thead>
     <th> Data </th>
@@ -46,7 +48,7 @@
 </thead>
 <tr>
     <% @operazione.where(targa: @autoveicolo.id).find_each do |operazione| %>
-     <td> <%= operazione.data %> </td>
+     <td><a href="http://localhost:3000/operazionis/<%= operazione.id %>"> <%= operazione.data %> </a></td>
      <td> <%= find_nome_meccanico(operazione.meccanico) %> </td>
      <td width="200"> <%= operazione.oggetto %> </td>
      <td align="center"> <%= operazione.km %> </td>

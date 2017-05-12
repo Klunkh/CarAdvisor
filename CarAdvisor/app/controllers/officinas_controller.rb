@@ -62,5 +62,6 @@ end
   end
  def meccanico_user
       redirect_to(root_url) unless current_user.tipo?
+      flash[:info]="Solo i meccanici possono inserire nuove officine"
     end
 end

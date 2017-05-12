@@ -29,7 +29,7 @@ def update
       
       if @officina.update(officina_params)
 	flash[:success] = "Dati aggiornati correttamente."
-        format.html { redirect_to root_url}
+        format.html { redirect_to "http://localhost:3000/officinas/index"}
         format.json { render :show, status: :ok, location: @officina}
       else
 	flash[:danger] = "Errore nella modifica dei dati."
@@ -62,5 +62,6 @@ end
   end
  def meccanico_user
       redirect_to(root_url) unless current_user.tipo?
+      flash[:info]("Solo i meccanici possono inserire nuove officine")
     end
 end

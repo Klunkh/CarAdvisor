@@ -1,0 +1,2 @@
+module ScadenzesHelper
+end
