@@ -1,6 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    function dbRequest(id_utente, id_officina){
+        alert ("hi");
+        var id = {'id_utente': id_utente, 'id_officina': id_officina};
+        $.ajax({
+        url: "/preferitis",
+        type: "PATCH",
+        data: {user_id: id_utente, meccanico:id_officina},
+      
+        });
+    
+}
+</script>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 </head>
+<body>
 <div class= "tabella">
 <h1>Indice officine</h1>
 <br/>
@@ -10,9 +26,9 @@
       <th class=pers>Indirizzo</th>
       <th class=pers>Contatto</th>
       <th class=pers>Numero di telefono</th>
+      <th class=pers>Preferito</th>
       <th class=pers>Opzioni</th>
-      <th colspan="3"></th>
-    </tr>
+      </tr>
   </thead>
 <% if current_user.admin?  %>
 <% @officina.each do |officina| %>
@@ -20,6 +36,7 @@
 	<td> <%= officina.indirizzo %></td>
         <td> <%= officina.contatto %></td>
         <td> <%= officina.numero_telefono %></td>
+        <td> <input type="checkbox" onchange="dbRequest(<%= current_user %>,<%= officina.id %>)" name="requestCheckbox"> Bello?</input></td>
 	<td> <a class = "modPers" href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra </a> &emsp;
 	<a class = "modPers" data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow" data-method="delete" href="/officinas/<%= officina.id %>"> Elimina</a> </td>
 </tr>
@@ -27,10 +44,38 @@
 <% elsif current_user.tipo? %>
 
 <% @officina.where(user_id: current_id).find_each do |officina| %>
+ 
 <tr>
+    
 	<td> <%= officina.indirizzo %></td>
         <td> <%= officina.contatto %></td>
         <td> <%= officina.numero_telefono %></td>
+        <td>  
+         <% if @preferiti.where(user_id: current_id).find_each.count <1 %> 
+         <form class="new_autoveicolo" id="new_autoveicolo" action="/preferitis" accept-charset="UTF-8" method="post">
+            <input type="hidden" class="form-control" name="preferitis[user_id]" id="preferiti_user_id" value="<%= current_id %>"/>
+            <input type="hidden" class="form-control" name="preferitis[meccanico]" id="preferiti_meccanico" value="<%= officina.id %>"/>
+            <input type="submit" value="Aggiungi ai preferiti"/>
+        </form>
+        
+        <% else %>
+
+
+        <% @preferiti.where(user_id: current_id,meccanico: officina.id).find_each do |preferiti|%>
+
+        
+        
+        
+        <form class="new_autoveicolo" id="new_autoveicolo" action="/preferitis/<%= preferiti.id %>" accept-charset="UTF-8" method="delete">
+        <input type="submit" value="Rimuovi dai preferiti"/>
+        </form>
+        
+        
+        
+        
+        <% end %>
+        <% end %>
+        </td>
 	<td> <a class = "modPers"  href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra &emsp; </a>
 	<a  class = "modPers" data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow"  data-method="delete" href="/officinas/<%= officina.id %>">  Elimina</a> </td>
 	</tr>
@@ -41,7 +86,33 @@
 	<td> <%= officina.indirizzo %></td>
         <td> <%= officina.contatto %></td>
         <td> <%= officina.numero_telefono %></td>
-		<td> <a class = "modPers"   "> Officina personale? &emsp; </a>
+ <td>  
+         <% if @preferiti.where(user_id: current_id).find_each.count <1 %> 
+         <form class="new_autoveicolo" id="new_autoveicolo" action="/preferitis" accept-charset="UTF-8" method="post">
+            <input type="hidden" class="form-control" name="preferitis[user_id]" id="preferiti_user_id" value="<%= current_id %>"/>
+            <input type="hidden" class="form-control" name="preferitis[meccanico]" id="preferiti_meccanico" value="<%= officina.id %>"/>
+            <input type="submit" value="Aggiungi ai preferiti"/>
+        </form>
+        
+        <% else %>
+
+
+        <% @preferiti.where(user_id: current_id,meccanico: officina.id).find_each do |preferiti|%>
+
+        
+        
+        
+        <form class="new_autoveicolo" id="new_autoveicolo" action="/preferitis/<%= preferiti.id %>" accept-charset="UTF-8" method="delete">
+        <input type="submit" value="Rimuovi dai preferiti"/>
+        </form>
+        
+        
+        
+        
+        <% end %>
+        <% end %>
+        </td>
+        <td><a class = "modPers" href="http://localhost:3000/officinas/<%= officina.id %> ">Mostra </a> &emsp;</td>
 		</tr>
 <% end %>
 <% end %>
@@ -53,4 +124,5 @@
 </p>
 <% end %>
 </div>
-
+</body>
+</html>

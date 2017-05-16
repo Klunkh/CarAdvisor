@@ -42,5 +42,13 @@
 <p>
 <a href="http://localhost:3000/autoveicolos/new" class="modPers"><span class="glyphicon glyphicon-plus"></span> Aggiungi veicolo</a>
 </p>
+
+<% @preferito.where(user_id: current_id).find_each do |preferito| %>
+<p>
+<a href="http://localhost:3000/officinas/<%= preferito.meccanico %>" class="modPers"><span class="glyphicon glyphicon-star-empty"></span>  Officina preferita</a>
+</p>
+<% end %>
+
+
 </div>
 

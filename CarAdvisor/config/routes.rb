@@ -1,10 +1,11 @@
 
  Rails.application.routes.draw do
   
- 
-
+  post '/ratings' => 'ratings#create'
+  post '/ratings/:id' => 'ratings#update'
+  get 'preferitis/:id' => 'preferitis#destroy'
   patch '/notificas' => 'notificas#test'
-  
+  post '/preferitis' => 'preferitis#create'
   get 'operazionis/new'
   post '/operazionis' => 'operazionis#create'
   get 'operazionis/:id/edit' => 'operazionis#edit'

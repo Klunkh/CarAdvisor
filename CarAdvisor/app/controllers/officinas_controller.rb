@@ -3,6 +3,11 @@ skip_before_action :verify_authenticity_token
 before_action :meccanico_user,     only: [:new, :destroy] 
   def show
 	@officina=Officina.find(params[:id])
+	@rating=Rating.where(user_id: current_id)
+        @ratings=Rating.all
+	@ratings.where(user_id: current_id, officina_id: @officina).find_each do |officina|
+	voto=officina.voto
+    end
   end
 
   def destroy
@@ -21,6 +26,7 @@ before_action :meccanico_user,     only: [:new, :destroy]
 
   def index
 	@officina=Officina.all
+    @preferiti=Preferiti.all
   end
    
 def update

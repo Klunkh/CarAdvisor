@@ -3,6 +3,8 @@ skip_before_action :verify_authenticity_token
 before_action :meccanico_user,     only: [:new, :destroy] 
   def show
 	@officina=Officina.find(params[:id])
+	@rating=Rating.where(user_id: current_id)
+	@rating_edit=Rating.where(user_id: current_id, officina_id: @officina).find_each
   end
 
   def destroy
@@ -21,6 +23,7 @@ before_action :meccanico_user,     only: [:new, :destroy]
 
   def index
 	@officina=Officina.all
+    @preferiti=Preferiti.all
   end
    
 def update
@@ -62,6 +65,6 @@ end
   end
  def meccanico_user
       redirect_to(root_url) unless current_user.tipo?
-      flash[:info]("Solo i meccanici possono inserire nuove officine")
+      flash[:info]="Solo i meccanici possono inserire nuove officine"
     end
 end

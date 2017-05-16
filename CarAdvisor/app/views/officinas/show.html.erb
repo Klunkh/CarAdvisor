@@ -19,11 +19,52 @@
   <strong>Numero di telefono:</strong>
   <%= @officina.numero_telefono %>
 </p>
-
+<p class=pers>
+  <strong>Media voti:</strong>
+  
+  <%= Rating.where(officina_id: @officina.id).average(:voto) %>
+  
+</p>
+<% if current_id== @officina.user_id %>
 <p>
+	
    <a href="http://localhost:3000/officinas/<%= @officina.id %>/edit" class="modPers"><span class="glyphicon glyphicon-pencil"></span> Modifica dati</a>
 </p>
-<br/>
 <p>
 <a data-confirm="Sicuro di voler eliminare questa officina?" rel="nofollow" class="modPers" data-method="delete" href="/officinas/<%= @officina.id %>"><span class="glyphicon glyphicon-trash"></span> Elimina Officina</a></p>
+<% end %>
+<% if current_user.tipo? %>
+<% if @rating.count >0 %>
+<% @ratings.where(user_id: current_id, officina_id: @officina.id).find_each do |rating| %>
+<p> <form class="new_autoveicolo" id="new_autoveicolo" action="/ratings/<%= rating.id %>" accept-charset="UTF-8" method="post">
+            <input type="hidden" class="form-control" name="ratings[user_id]" id="rating_user_id" value="<%= current_id %>"/>
+            <input type="hidden" class="form-control" name="ratings[officina_id]" id="rating_meccanico" value="<%= @officina.id %>"/>
+	   
+	    <p class=pers> Il tuo voto attuale è: <%= rating.voto %> </p>
+	    <select name="ratings[voto]" id="rating_voto" class="pers">
+                <option selected disabled value="<%= rating.voto %>"> Inserisci un nuovo voto </option>
+		<option value=1> 1 </option>
+		<option value=2> 2 </option>
+		<option value=3> 3 </option>
+		<option value=4> 4 </option>
+		<option value=5> 5 </option>
+	   </select>
+            <input type="submit" value="Vota!"/>
+        </form></p>
+	<% end %>
+<%else %>
+<p> <form class="new_autoveicolo" id="new_autoveicolo" action="/ratings" accept-charset="UTF-8" method="post">
+            <input type="hidden" class="form-control" name="ratings[user_id]" id="rating_user_id" value="<%= current_id %>"/>
+            <input type="hidden" class="form-control" name="ratings[officina_id]" id="rating_meccanico" value="<%= @officina.id %>"/>
+	    <select name="ratings[voto]" id="rating_voto">
+		<option value=1> 1 </option>
+		<option value=2> 2 </option>
+		<option value=3> 3 </option>
+		<option value=4> 4 </option>
+		<option value=5> 5 </option>
+	  </select>
+            <input type="submit" value="Vota!"/>
+        </form></p>
+<%end %>
+<%end %>
 </div>

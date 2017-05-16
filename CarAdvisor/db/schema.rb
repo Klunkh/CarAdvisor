@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170429153143) do
+ActiveRecord::Schema.define(version: 20170516160706) do
 
   create_table "autoveicolos", force: :cascade do |t|
     t.integer  "user_id"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20170429153143) do
     t.integer  "user_id"
     t.integer  "notified_by_id"
     t.string   "tipo"
-    t.boolean  "read",           default: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "read"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["notified_by_id"], name: "index_notificas_on_notified_by_id"
     t.index ["user_id"], name: "index_notificas_on_user_id"
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170429153143) do
     t.integer  "user_id"
     t.string   "indirizzo"
     t.string   "contatto"
-    t.string   "numero_telefono"
+    t.integer  "numero_telefono"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_officinas_on_user_id"
@@ -56,6 +56,24 @@ ActiveRecord::Schema.define(version: 20170429153143) do
     t.string   "targa"
     t.float    "costo"
     t.index ["user_id"], name: "index_operazionis_on_user_id"
+  end
+
+  create_table "preferitis", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "meccanico"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_preferitis_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "officina_id"
+    t.integer  "voto"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["officina_id"], name: "index_ratings_on_officina_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "scadenzes", force: :cascade do |t|

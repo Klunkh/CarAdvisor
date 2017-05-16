@@ -34,9 +34,13 @@ a {
   line-height: 150%;
   font-family: 'Raleway', sans-serif;
 }
+p {
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+}
 
 .registrazione{
-  overflow-x: auto;
+  
   padding-bottom: 950px;
   background-color: #FFF;
   padding-top: 40px;
@@ -114,6 +118,7 @@ textarea {
 }
 
 .datiPers{
+  overflow: auto;
   padding-top: 20px;
   padding-bottom: 450px;
   background-color: #FFF;

@@ -1,10 +1,11 @@
 
  Rails.application.routes.draw do
   
- 
-
+  post '/ratings' => 'ratings#create'
+  post '/ratings/edit' => 'ratings#update'
+  get 'preferitis/:id' => 'preferitis#destroy'
   patch '/notificas' => 'notificas#test'
-  
+  post '/preferitis' => 'preferitis#create'
   get 'operazionis/new'
   post '/operazionis' => 'operazionis#create'
   get 'operazionis/:id/edit' => 'operazionis#edit'
@@ -41,6 +42,6 @@
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :autoveicolos,   only: [:new, :create, :edit, :update, :show]
   resources :officinas, only: [:new]
-  
+  resources :scadenzes
   root                'pagina_statica#home'
 end

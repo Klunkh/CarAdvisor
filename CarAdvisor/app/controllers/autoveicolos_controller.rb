@@ -26,6 +26,7 @@ skip_before_action :verify_authenticity_token
 
   def index
     @autoveicolo = Autoveicolo.all
+    @preferito = Preferiti.all
   end
 
   def new

@@ -34,6 +34,10 @@ a {
   line-height: 150%;
   font-family: 'Raleway', sans-serif;
 }
+p {
+  line-height: 150%;
+  font-family: 'Raleway', sans-serif;
+}
 
 .registrazione{
   
@@ -145,8 +149,13 @@ textarea {
 
 }
 .piccolo{
-	font-size: 15px;
-font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+}
+.piccoloHome{
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
 }
 .sfondo {  background: url('/assets/sfondocar.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
