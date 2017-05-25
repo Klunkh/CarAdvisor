@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516160706) do
+ActiveRecord::Schema.define(version: 20170524085523) do
 
   create_table "autoveicolos", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20170516160706) do
     t.datetime "updated_at", null: false
     t.float    "media"
     t.index ["user_id"], name: "index_autoveicolos_on_user_id"
+  end
+
+  create_table "conversaziones", force: :cascade do |t|
+    t.integer  "user_id"
+    t.         "destinatario_id"
+    t.string   "messaggio"
+    t.boolean  "letto"
+    t.boolean  "inviato"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["destinatario_id"], name: "index_conversaziones_on_destinatario_id"
+    t.index ["user_id"], name: "index_conversaziones_on_user_id"
   end
 
   create_table "notificas", force: :cascade do |t|
@@ -40,8 +52,9 @@ ActiveRecord::Schema.define(version: 20170516160706) do
     t.string   "indirizzo"
     t.string   "contatto"
     t.integer  "numero_telefono"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "cortesia",        default: false
     t.index ["user_id"], name: "index_officinas_on_user_id"
   end
 

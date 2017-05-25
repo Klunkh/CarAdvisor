@@ -1,2 +1,44 @@
-<h1>Scadenzes#index</h1>
-<p>Find me in app/views/scadenzes/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body>
+<div class= "tabella">
+<h1>Indice Operazioni</h1>
+<br/>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th class=pers>Tipo</th>
+      <th class=pers>Data Inserimento</th>
+      <th class=pers>KM all'inserimento</th>
+      <th class=pers>Veicolo</th>
+	  <th></th>
+      </tr>
+  </thead>
+  <% if current_user.admin?  %>
+			<% @scadenza.each do |scadenza| %>
+	<tr>
+	<td class=pers> <%=scadenza.tipo%></td>
+        <td class=pers> <%= scadenza.dataStipulazione %></td>
+        <td class=pers> <%= scadenza.km  %></td>
+		<td class=pers> <%=scadenza.targa  %></td>
+		<td> <a  class = "modPers" data-confirm="Sicuro di voler eliminare questa scadenza?" rel="nofollow"  data-method="delete" href="/scadenzes/<%= scadenza.id %>">  Elimina</a> </td>
+		</tr>
+		<% end %>
+ <% else %>
+	<% @scadenza.where(user_id: current_id).find_each do |scadenza| %>
+ 
+	<tr>
+    
+	<td class=pers> <%=scadenza.tipo%></td>
+        <td class=pers> <%= scadenza.dataStipulazione %></td>
+        <td class=pers> <%=scadenza.km  %></td>
+		<td class=pers> <%=scadenza.targa  %></td>
+		<td> <a  class = "modPers" data-confirm="Sicuro di voler eliminare questa scadenza?" rel="nofollow"  data-method="delete" href="/scadenzes/<%= scadenza.id %>">  Elimina</a> </td>
+		</tr>
+	
+<% end %>
+<% end %>
+  </table>

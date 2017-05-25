@@ -9,6 +9,8 @@ before_action :logged_in_user,
   end
 
   def index
+  @scadenza=Scadenze.all
+  @autoveicolo=Autoveicolo.all
   end
 
   def edit

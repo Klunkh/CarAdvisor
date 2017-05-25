@@ -19,6 +19,8 @@ before_action :logged_in_user,
   
   
   def edit
+	@user=User.all
+  
 	@operazioni=Operazioni.find(params[:id])
     rescue ActiveRecord::RecordNotFound  
     redirect_to root_url

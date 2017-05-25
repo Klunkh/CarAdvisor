@@ -1,7 +1,7 @@
 class AutoveicolosController < ApplicationController
-before_action :logged_in_user, only: [:create]
-before_action :utente_autoveicolo, only: [:destroy,:show, :update]
 
+before_action :utente_autoveicolo, only: [:destroy,:show, :update]
+before_action :logged_in_user, only: [:create]
 
 
 skip_before_action :verify_authenticity_token  
@@ -20,7 +20,7 @@ skip_before_action :verify_authenticity_token
     @operazione=Operazioni.all
     rescue ActiveRecord::RecordNotFound  
         redirect_to root_url
-        flash[:info]="L'operazione selezionata non esiste."
+        flash[:info]="L'autoveicolo selezionato non esiste."
         return
   end
 
@@ -114,6 +114,10 @@ end
   def utente_autoveicolo
       @autoveicolo=Autoveicolo.find(params[:id])
       redirect_to(root_path) unless @autoveicolo.user_id==current_id
+      rescue ActiveRecord::RecordNotFound  
+        redirect_to root_url
+        flash[:info]="L'autoveicolo selezionato non esiste."
+        return
   end
     def admin_user
       redirect_to(root_url) unless current_user.admin?

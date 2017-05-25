@@ -4,7 +4,8 @@
 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
 
 </head>
-<body class="sfondo">
+<!-- <body class="sfondo"> -->
+	<body class="sfondo">
     <% if logged_in? %>
     <span class="full-width-bar">
         <div class="col-lg-6">
@@ -12,19 +13,19 @@
                 <% if @autoveicolo.where(user_id: current_id).count < 1 %>
                 <p class="piccoloHome"> Non hai ancora aggiunto nessun veicolo, <a href="http://localhost:3000/autoveicolos/new" class="modPersXS"> aggiungilo ora!</a></p>
                 <% else %>
-                <p>Di quale veicolo ti vuoi occupare oggi?</p>
+                <p class=pers>Di quale veicolo ti vuoi occupare oggi?</p>
                 <% @autoveicolo.where(user_id: current_id).find_each do |autoveicolo| %>
                 <br/>
-                <li><a href="http://localhost:3000/autoveicolos/<%= autoveicolo.id %>"> <%= autoveicolo.targa %> </a></li>
+                <li><a class=modPers href="http://localhost:3000/autoveicolos/<%= autoveicolo.id %>"> <%= autoveicolo.targa %> </a></li>
                 <% end %>
                 <% end %>
         </div>
         <div class="col-lg-6">
             <h2>Scadenze entro 30 giorni</h2>
             <table class="table table-bordered table-hover">
-            <th> Targa Veicolo</th>
-            <th> Scadenza </th>
-            <th> Data Stimata </th>
+            <th  class=pers> Targa Veicolo</th>
+            <th  class=pers> Scadenza </th>
+            <th class=pers> Data Stimata </th>
             <% @scadenze.where(user_id: current_id, notificato: 'f').find_each do |scadenze| %>
             <tr>
             <% if (scadenze.data_scadenza).to_i> @data_passata %>
@@ -37,7 +38,8 @@
             </table>
             
     </span>
-    <% end %>    
+    <% end %> 
+</div>
 </body>
  
 </html>

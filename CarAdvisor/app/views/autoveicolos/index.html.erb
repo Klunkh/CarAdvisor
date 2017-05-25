@@ -19,20 +19,20 @@
 <% if current_user.admin?  %>
 <% @autoveicolo.each do |autoveicolo| %>
 <tr>
-	<td> <%= autoveicolo.targa %></td>
-        <td> <%= autoveicolo.modello %></td>
-        <td> <%= autoveicolo.carburante %></td>
-	<td> <%= autoveicolo.kilometri%></td>
+	<td class=pers> <%= autoveicolo.targa %></td>
+        <td class=pers> <%= autoveicolo.modello %></td>
+        <td class=pers> <%= autoveicolo.carburante %></td>
+	<td class=pers> <%= autoveicolo.kilometri%></td>
 	<td> <a class ="modPers" href="http://localhost:3000/autoveicolos/<%= autoveicolo.id %> ">Mostra</a></td>
 <% end %>
 <% else %>
 
 <% @autoveicolo.where(user_id: current_id).find_each do |autoveicolo| %>
 <tr>
-	<td> <%= autoveicolo.targa %></td>
-        <td> <%= autoveicolo.modello %></td>
-        <td> <%= autoveicolo.carburante %></td>
-	<td> <%= autoveicolo.kilometri%></td>
+	<td class=pers> <%= autoveicolo.targa %></td>
+        <td class=pers> <%= autoveicolo.modello %></td>
+        <td class=pers> <%= autoveicolo.carburante %></td>
+	<td class=pers> <%= autoveicolo.kilometri%></td>
 	<td> <a class ="modPers" href="http://localhost:3000/autoveicolos/<%= autoveicolo.id %> ">Mostra</a></td>
 <% end %>
 <% end %>

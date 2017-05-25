@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+       function test(id1, id2){
+        var id = {'id1': id1, 'id2': id2}
+        $.ajax({
+        url: "/conversaziones/index",
+        type: "PATCH",
+        data: id,
+        success: function(data){
+                       $(index).html(data);
+                     }
+        });
+}
+</script>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<body>
+<div class="registrazione">
+    <% azzera_array %>
+<div class="col-lg-5">
+    
+    <% @conversaziones.each do |conversazione| %>
+    
+    <% if conversazione.user_id==current_id %>
+    <% if aggiungi_controlla_id(trova_user_id(conversazione.destinatario_id)) %>
+    <% @user.where(id: trova_user_id(conversazione.destinatario_id)).find_each do |utente| %>
+    <hr noshade="noshade">
+    <a href="" onclick="test(<%= current_id %> ,<%= trova_user_id(conversazione.destinatario_id) %>)"> <%= utente.nome %> <%= utente.cognome %> </a>
+    
+    <% end %>
+    <% end %>   
+    <% end %>
+    
+    <% if conversazione.destinatario_id==current_user.email %>
+    <% if aggiungi_controlla_id(conversazione.user_id) %>
+    <% @user.where(email: converti_mail_id(conversazione.user_id)).find_each do |utente| %>
+    <hr noshade="noshade">
+    <a href="" onclick="test(<%= trova_user_id(conversazione.destinatario_id) %>, <%= conversazione.user_id %>)"> <%= utente.nome %> <%= utente.cognome %> </a>
+    <% end %>
+    <% end %>   
+    <% end %>
+    <% end %>
+    <hr>
+</div>
+<div class="col-lg-7">  
+    <div id="index">
+    <h1>secchio di fave</h1>
+    <% if session[:var]==1 %>
+    <% @msg.find_each do |messaggio| %>
+    <%= messaggio.messaggio %>
+    <% end %>
+    <% end %>
+ </div>
+</div>
+</div>
+</div>
+</body>
+</html>

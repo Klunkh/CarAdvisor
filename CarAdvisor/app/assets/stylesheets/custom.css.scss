@@ -231,4 +231,22 @@ font-size: medium;
     color: black;
 }
 
+.scrollable{
+   overflow-y: auto;
+   overflow-x: auto;
+   }
+.trasparente{
+ background: url('/assets/vuota.png'); 
+ }
 
+ .collection{
+	padding: 10px 40px;
+	min-width: 100 px;
+ }
+.sinistra{
+   text-align: left;
+   }
+   
+.destra{
+  text-align: right;
+  }

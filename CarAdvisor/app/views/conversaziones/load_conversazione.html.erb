@@ -1,0 +1,59 @@
+<html>
+<body>
+
+<div class="scrollable">
+<% @msg.each do |messaggi| %>
+
+<% if messaggi.user_id!=current_id %>
+<h3 align="left" class="piccolo"> <%= messaggi.messaggio %> </h3>
+<h6 align="left"> <%= messaggi.created_at %> </h6>
+
+<% elsif messaggi.user_id==current_id %>
+
+<h3 class="piccolo" align="right"> <%= messaggi.messaggio %></h3>
+<h6 align="right"> <%= messaggi.created_at %> </h6>
+<% end %>
+</tr>
+<% end %>
+</table>
+<% @msg.find do |messaggi| %>
+</div>
+<br/>
+<div>
+<form class="new_conversazione" id="new_conversazione" action="/conversazione" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==" />
+   
+
+ <div class="field">
+     <input type="hidden" size= "30" class="form-control" name="conversaziones[user_id]" id="conversaziones_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+  <% if messaggi.user_id!=current_id %>  
+    <input type="hidden" size= "30" class="form-control" name="conversaziones[destinatario_id]" id="conversaziones_destinatario_id" value="<%= converti_mail_id(messaggi.user_id) %>" />
+ <% else %>
+    <input type="hidden" size= "30" class="form-control" name="conversaziones[destinatario_id]" id="conversaziones_destinatario_id" value="<%= messaggi.destinatario_id %>/>
+  </div>
+ <% end %>
+   <div class="field">
+    <label for="operazionis_oggetto">Risposta Rapida</label>
+    <textarea rows="4" cols="30" class="form-control" name="conversaziones[messaggio]" id="conversaziones_messaggio"></textarea>
+  </div>
+
+  
+
+  <div class="field">
+     <input type="hidden" name="conversaziones[inviato]" size="30" class="form-control" id="conversaziones_inviato" value="t" />
+  </div>
+  <div class="field">
+     <input type="hidden" name="conversaziones[letto]" size="30" class="form-control" id="conversaziones_letto" value="f" />
+  </div>
+
+ 
+  <div class="actions">
+  <input type="submit" name="commit" value="Invia Messaggio" class="btn btn-primary btn-lg" data-disable-with="Invio in corso.." />
+  </div>
+  </form>
+  </div>
+  <% end %>
+</div>
+</body>
+</html>

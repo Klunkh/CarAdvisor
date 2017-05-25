@@ -9,7 +9,15 @@ before_action :meccanico_user,     only: [:new, :destroy]
 	voto=officina.voto
     end
   end
-
+    def setta_cortesia
+    @officina=Officina.find(params[:id])
+        if @officina.cortesia?
+            @officina.update(:cortesia => 'f')
+        else 
+        @officina.update(:cortesia => 't')
+        end
+        redirect_to(:back)
+    end
   def destroy
 	 Officina.find(params[:id]).destroy
     flash[:success] = "Officina cancellata correttamente."

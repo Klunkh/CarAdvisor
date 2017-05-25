@@ -40,7 +40,6 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bcrypt (3.1.7)
-    bcrypt (3.1.7-x64-mingw32)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.3)
@@ -154,7 +153,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt (= 3.1.7)
+  bcrypt
   bootstrap-sass (= 3.2.0.0)
   byebug
   coffee-rails (~> 4.2)

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+</head>
+<div class="registrazione">
+<h1>Nuovo Messaggio</h1>
+
+
+<% if @conversazione.errors.any? %>
+    <% @conversazione.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+	  
+	  <% end %>
+	  <% end %>
+<div class="col-md-4 col-md-offset-4">
+<form class="new_conversazione" id="new_conversazione" action="/conversazione" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M0ATVCM/VhXcncx8JhzDVy7VAm2QAFWnvHsaL81uQxIWHikDUL69ha7BpbJdIHrbwt5SkfDu2ifYOZsUPxMUKw==" />
+   
+
+ <div class="field">
+     <input type="hidden" size= "30" class="form-control" name="conversaziones[user_id]" id="conversaziones_user_id" value="<%= current_id %>"/>
+  </div>
+  <div class="field">
+    <label for="conversaziones_destinatario_id">E-Mail del Destinatario</label>
+    <input type="text" size= "30" class="form-control" name="conversaziones[destinatario_id]" id="conversaziones_destinatario_id" />
+  </div>
+
+   <div class="field">
+    <label for="operazionis_oggetto">Messaggio</label>
+    <textarea rows="4" cols="30" class="form-control" name="conversaziones[messaggio]" id="conversaziones_messaggio"></textarea>
+  </div>
+
+  
+
+  <div class="field">
+     <input type="hidden" name="conversaziones[inviato]" size="30" class="form-control" id="conversaziones_inviato" value="t" />
+  </div>
+  <div class="field">
+     <input type="hidden" name="conversaziones[letto]" size="30" class="form-control" id="conversaziones_letto" value="f" />
+  </div>
+
+ 
+  <div class="actions">
+  <input type="submit" name="commit" value="Invia Messaggio" class="btn btn-primary btn-lg" data-disable-with="Invio in corso.." />
+  </div>
+
+</form>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

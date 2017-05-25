@@ -1,6 +1,11 @@
 
  Rails.application.routes.draw do
   
+  get 'conversaziones/new'
+  post 'conversazione' => 'conversaziones#create'
+  get 'conversaziones/index' => 'conversaziones#index'
+  post '/conversaziones/index' => 'conversaziones#load_conversazione'
+  patch '/conversaziones/index' => 'conversaziones#reload'
   post '/ratings' => 'ratings#create'
   post '/ratings/:id' => 'ratings#update'
   get 'preferitis/:id' => 'preferitis#destroy'
@@ -19,6 +24,7 @@
   get 'officinas/edit'
   get 'officinas/index'
   post '/officinas' => 'officinas#create'
+  post '/officinas/:id' => 'officinas#setta_cortesia'
   delete 'officinas/:id' => 'officinas#destroy'
   patch 'officinas/:id' => 'officinas#update'
   get 'officinas/:id' => 'officinas#show'
@@ -33,6 +39,7 @@
   get 'password_resets/edit'
  
   get 'contattaci' => 'pagina_statica#contattaci'
+  get 'faq' => 'pagina_statica#faq'
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

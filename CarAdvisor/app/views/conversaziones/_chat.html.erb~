@@ -1,0 +1,3 @@
+<% @messaggi.find_each do |messaggi| %>
+ <%= messaggi.messaggio %>
+ <% end %>

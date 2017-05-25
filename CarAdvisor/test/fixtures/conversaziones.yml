@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  destinatario: one
+  messaggio: MyString
+  letto: false
+  inviato: false
+
+two:
+  user: two
+  destinatario: two
+  messaggio: MyString
+  letto: false
+  inviato: false
