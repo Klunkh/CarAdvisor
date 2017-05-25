@@ -30,7 +30,7 @@ end
     respond_to do |format|
      if @conversazione.save
 	flash[:success] = "Messaggio inviato correttamente"
-        format.html { redirect_to root_url}
+        format.html { redirect_to (:back)}
         format.json { render :show, status: :created, location: @conversazione }
       else
         flash[:danger]= "Errore invio messaggio, ricontrolla i dati inseriti"

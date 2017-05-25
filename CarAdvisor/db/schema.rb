@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170524085523) do
 
   create_table "conversaziones", force: :cascade do |t|
     t.integer  "user_id"
-    t.         "destinatario_id"
+    t.integer  "destinatario_id"
     t.string   "messaggio"
     t.boolean  "letto"
     t.boolean  "inviato"

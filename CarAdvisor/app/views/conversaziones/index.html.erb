@@ -9,7 +9,7 @@
         type: "POST",
         data: id,
         success: function(html){
-          $("#index").replaceWith(html);
+          $("#index").html(html);
           }
         });
 }
